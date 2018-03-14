@@ -1,12 +1,15 @@
+<!-- Start header -->
 <header class="row">
     <div class="col-md-12">
-        <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-dark bg-primary navbar-expand-md">
+            <a class="navbar-brand" ui-sref="App.customer_list">Home</a>
+            <!-- Start show menu button if mobile or tablette -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+            <!-- End show menu button if mobile or tablette -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Start menu  items -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" ui-sref="App.customer_list" ui-sref-active="active">Home</a>
@@ -15,13 +18,16 @@
                         <a class="nav-link" ui-sref="App.add_customer" ui-sref-active="active">Add Customer</a>
                     </li>
                 </ul>
+                <!-- End menu  items -->
             </div>
         </nav>
     </div>
 </header>
-
+<!-- End header -->
 <div class="row">
+    <!-- Start content -->
     <div class="col-md-12" ui-view="content"></div>
+    <!-- End content -->
 </div>
 
 <footer>

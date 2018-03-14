@@ -17,7 +17,14 @@
             <td>{{ customer.name.last }}</td>
             <td>{{ customer.birthday }}</td>
             <td>{{ customer.gender }}</td>
-            <td><a ui-sref="App.edit_cutomer({customerId: customer.customerID})">Edit</a></td>
+            <td>
+                <button type="button" class="btn btn-primary" ui-sref="App.show_customer({customerId: customer.customerID})">
+                    Show
+                </button>
+                <button type="button" class="btn btn-primary" ui-sref="App.edit_cutomer({customerId: customer.customerID})">
+                    Edit
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>

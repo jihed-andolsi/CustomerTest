@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 96);
+/******/ 	return __webpack_require__(__webpack_require__.s = 98);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9086,10 +9086,13 @@ exports.UrlRouterProvider = UrlRouterProvider;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_ui_router__ = __webpack_require__(/*! angular-ui-router */ 81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_ui_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_ui_router__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_mainService__ = __webpack_require__(/*! ./main/mainService */ 95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_mainService__ = __webpack_require__(/*! ./main/mainService */ 97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_mainService___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__main_mainService__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__customer_customerService__ = __webpack_require__(/*! ./customer/customerService */ 93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__customer_customerService__ = __webpack_require__(/*! ./customer/customerService */ 94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(/*! ./app.routes */ 89);
+/**
+ * Load angular app
+ */
 
 
 
@@ -45896,10 +45899,19 @@ $provide.value("$locale", {
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_mainController__ = __webpack_require__(/*! ./main/mainController */ 94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_mainController__ = __webpack_require__(/*! ./main/mainController */ 96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__customer_customerListController__ = __webpack_require__(/*! ./customer/customerListController */ 92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customer_customerEditController__ = __webpack_require__(/*! ./customer/customerEditController */ 91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__customer_customerAddController__ = __webpack_require__(/*! ./customer/customerAddController */ 90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__customer_customerShowController__ = __webpack_require__(/*! ./customer/customerShowController */ 95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__customer_customerNotFoundController__ = __webpack_require__(/*! ./customer/customerNotFoundController */ 93);
+/**
+ * Configure routes
+ */
+
+// load needed controllers
+
+
 
 
 
@@ -45907,8 +45919,9 @@ $provide.value("$locale", {
 
 class config {
     constructor($stateProvider, $urlRouterProvider){
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise("/"); // redirect to / if route not found
         $stateProvider
+            // layout of application
             .state('App', {
                 templateUrl: 'views/src/app/main/layout.html',
                 controller: __WEBPACK_IMPORTED_MODULE_0__main_mainController__["a" /* default */],
@@ -45916,11 +45929,12 @@ class config {
 
                 },
             })
+            // List of customers configuration
             .state('App.customer_list', {
                 url: "/",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/view/list.html',
+                        templateUrl: 'views/src/app/customer/views/list.html',
                         controller: __WEBPACK_IMPORTED_MODULE_1__customer_customerListController__["a" /* default */],
                     },
                 },
@@ -45928,14 +45942,15 @@ class config {
                     customers : (customerService)=>{
                         return customerService.getList();
                     },
+
                 },
             })
-
+            // edit customer configuration
             .state('App.edit_cutomer', {
-                url: "/customer/{customerId}",
+                url: "/customer/edit/{customerId}",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/view/edit.html',
+                        templateUrl: 'views/src/app/customer/views/edit.html',
                         controller: __WEBPACK_IMPORTED_MODULE_2__customer_customerEditController__["a" /* default */],
                     },
                 },
@@ -45943,14 +45958,16 @@ class config {
                     customer : (customerService, $stateParams)=>{
                         return customerService.getById($stateParams.customerId);
                     },
+
                 },
             })
-            .state('App.add_customer', {
-                url: "/customer",
+            // show customer configuration
+            .state('App.show_customer', {
+                url: "/customer/show/{customerId}",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/view/add.html',
-                        controller: __WEBPACK_IMPORTED_MODULE_3__customer_customerAddController__["a" /* default */],
+                        templateUrl: 'views/src/app/customer/views/show.html',
+                        controller: __WEBPACK_IMPORTED_MODULE_4__customer_customerShowController__["a" /* default */],
                     },
                 },
                 resolve: {
@@ -45959,10 +45976,36 @@ class config {
                     },
                 },
             })
+            // add customer configuration
+            .state('App.add_customer', {
+                url: "/customer",
+                views: {
+                    'content': {
+                        templateUrl: 'views/src/app/customer/views/add.html',
+                        controller: __WEBPACK_IMPORTED_MODULE_3__customer_customerAddController__["a" /* default */],
+                    },
+                },
+                resolve: {
+
+                },
+            })
+            // show not found if customer not found
+            .state('App.error', {
+                url: "/customer/notFound",
+                views: {
+                    'content': {
+                        templateUrl: 'views/src/app/customer/views/notFound.html',
+                        controller: __WEBPACK_IMPORTED_MODULE_5__customer_customerNotFoundController__["a" /* default */],
+                    },
+                },
+                resolve: {
+
+                },
+            })
     }
 }
 
-config.$inject = ['$stateProvider', '$urlRouterProvider'];
+config.$inject = ['$stateProvider', '$urlRouterProvider']; // inject services to config class
 /* harmony default export */ exports["a"] = config;
 
 /***/ },
@@ -45975,18 +46018,37 @@ config.$inject = ['$stateProvider', '$urlRouterProvider'];
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+/**
+ * add customer to the list
+ */
 class customerAddController {
-    constructor($scope) {
+    constructor($scope, customerService, $state) {
+        //initilize customer object
+        $scope.customer =  {
+            "name": {
+                "first": "",
+                "last": ""
+            },
+            "birthday": "",
+            "gender": "",
+            "lastContact": "",
+            "customerLifetimeValue": 0
+        };
+        //action form
         $scope.submitForm = ()=>{
+            //check if form is valid
             if ($scope.customerForm.$valid) {
-                alert('add customer');
-
-                let customer = $scope.customer;
+                // add new customer
+                let newCusto = customerService.add($scope.customer);
+                if(newCusto){
+                    // if added redirect to show page
+                    $state.go('App.show_customer', {customerId: newCusto.customerID});
+                }
             }
         }
     }
 }
-customerAddController.$inject = ['$scope'];
+customerAddController.$inject = ['$scope', 'customerService', '$state']; //inject service in controller
 /* harmony default export */ exports["a"] = customerAddController;
 
 
@@ -46000,14 +46062,34 @@ customerAddController.$inject = ['$scope'];
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-class customerController {
-    constructor($scope, $stateParams, customer) {
-        $scope.customerId = $stateParams.customerId;
-        $scope.customer = customer;
+/**
+ * fetch and edit customer by id
+ */
+class customerEditController {
+    constructor($scope, $stateParams, customer, customerService, $state) {
+        // check if customer is found
+        if(!customer){
+            $state.go('App.error');
+        }
+        $scope.customerId = $stateParams.customerId; // get id of customer from params
+        $scope.customer = customer; // get customer by id service resolve
+        // submit form action
+        $scope.submitForm = ()=>{
+            // check if form is valid
+            if ($scope.customerForm.$valid) {
+                // edit customer
+                let edit = customerService.edit($stateParams.customerId, $scope.customer);
+                if(edit){
+                    //redirect to show page
+                    $state.go('App.show_customer', {customerId: $stateParams.customerId});
+                }
+            }
+        }
+
     }
 }
-customerController.$inject = ['$scope', '$stateParams', 'customer'];
-/* harmony default export */ exports["a"] = customerController;
+customerEditController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject service in controller
+/* harmony default export */ exports["a"] = customerEditController;
 
 
 /***/ },
@@ -46020,17 +46102,41 @@ customerController.$inject = ['$scope', '$stateParams', 'customer'];
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+/**
+ * shows list of customers
+ */
 class customerListController {
     constructor($scope, customers) {
-        $scope.customers = customers;
+        $scope.customers = customers; // get list of customer using service resolve
     }
 }
-customerListController.$inject = ['$scope', 'customers'];
+customerListController.$inject = ['$scope', 'customers'];  //inject service in controller
 /* harmony default export */ exports["a"] = customerListController;
 
 
 /***/ },
 /* 93 */
+/* exports provided: default */
+/* exports used: default */
+/*!********************************************************!*\
+  !*** ./src/app/customer/customerNotFoundController.ts ***!
+  \********************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * shows not found if customer not found
+ */
+class customerNotFoundController {
+    constructor() {
+
+    }
+}
+/* harmony default export */ exports["a"] = customerNotFoundController;
+
+
+/***/ },
+/* 94 */
 /* exports provided: default */
 /* exports used: default */
 /*!*********************************************!*\
@@ -46040,10 +46146,11 @@ customerListController.$inject = ['$scope', 'customers'];
 
 "use strict";
 /**
- * Created by Andolsi on 28/02/2018.
+ * service customer to fetch some api, here we have localy stored data
  */
 class customerService{
     constructor(){
+        // data json
         this.data = [
             {
                 "customerID": 1,
@@ -46102,9 +46209,12 @@ class customerService{
             }
         ]
     }
+    // get full list of customers, here if we have an API we should use pagination
     getList(){
         return this.data;
     }
+
+    // get customer by id, return object
     getById(id){
         let list = this.getList();
         let [custo]=  list.filter(customer =>{
@@ -46112,14 +46222,79 @@ class customerService{
                 return customer;
             }
         });
+
         return custo;
+    }
+
+    // edit customer by id, return boolean
+    edit(customerID, newCustomerValue){
+        let custo = this.getById(customerID);
+        custo = newCustomerValue;
+        return true;
+    }
+
+
+    // add customer to the list
+    add(newCustomerValue){
+        let list = this.getList();
+        let counter = Math.max(...list.map(e=>{return e.customerID})) + 1; // get new id to setup new customer
+        newCustomerValue.customerID = counter; //set the new id to the new customer
+        this.data.push(newCustomerValue); // push customer to the list
+        return newCustomerValue;
+    }
+
+    // delete customer from list
+    del(customerID){
+        // filter list and get new list without customer to delete
+        this.data = this.getList().filter(customer =>{
+            if(customer.customerID != customerID){
+                return customer;
+            }
+        });
+
+        return true;
     }
 }
 
 /* harmony default export */ exports["a"] = customerService;
 
 /***/ },
-/* 94 */
+/* 95 */
+/* exports provided: default */
+/* exports used: default */
+/*!****************************************************!*\
+  !*** ./src/app/customer/customerShowController.ts ***!
+  \****************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * show customer detail
+ */
+class customerController {
+    constructor($scope, $stateParams, customer, customerService, $state) {
+        if(!customer){
+            $state.go('App.error');
+        }
+        $scope.customerId = $stateParams.customerId; //get customer id from params
+        $scope.customer = customer; // get customer object by id using service
+        // delete action
+        $scope.del = () => {
+            // delete customer from array
+            let del = customerService.del($stateParams.customerId);
+            if(del){
+                //if deleted redirect to page list customer
+                $state.go('App.customer_list');
+            }
+        }
+    }
+}
+customerController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject services to controller
+/* harmony default export */ exports["a"] = customerController;
+
+
+/***/ },
+/* 96 */
 /* exports provided: default */
 /* exports used: default */
 /*!****************************************!*\
@@ -46128,6 +46303,9 @@ class customerService{
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
+/**
+ * Main controller of application
+ */
 class mainController {
     constructor() {
 
@@ -46138,7 +46316,7 @@ class mainController {
 
 
 /***/ },
-/* 95 */
+/* 97 */
 /* unknown exports provided */
 /* exports used: default */
 /*!*************************************!*\
@@ -46149,7 +46327,7 @@ class mainController {
 
 
 /***/ },
-/* 96 */
+/* 98 */
 /* unknown exports provided */
 /* all exports used */
 /*!*****************!*\
