@@ -4,7 +4,7 @@
 class customerService{
     constructor(){
         // data json
-        this.data = [
+        this.setData([
             {
                 "customerID": 1,
                 "name": {
@@ -60,7 +60,11 @@ class customerService{
                 "lastContact": "2017-03-18T12:20:06.702Z",
                 "customerLifetimeValue": 1019.91
             }
-        ]
+        ]);
+    }
+
+    setData(data){
+        this.data = data;
     }
     // get full list of customers, here if we have an API we should use pagination
     getList(){
@@ -81,8 +85,15 @@ class customerService{
 
     // edit customer by id, return boolean
     edit(customerID, newCustomerValue){
-        let custo = this.getById(customerID);
-        custo = newCustomerValue;
+        //let custo = this.getById(customerID);
+        //custo = newCustomerValue;
+        this.data.filter((customer, k) =>{
+            if(customer.customerID == customerID){
+                this.data[k] = newCustomerValue;
+                return customer;
+            }
+        });
+
         return true;
     }
 
@@ -91,7 +102,9 @@ class customerService{
     add(newCustomerValue){
         let list = this.getList();
         let counter = Math.max(...list.map(e=>{return e.customerID})) + 1; // get new id to setup new customer
-        newCustomerValue.customerID = counter; //set the new id to the new customer
+        //newCustomerValue.customerID = counter; //set the new id to the new customer
+        newCustomerValue = Object.assign({customerID: counter}, newCustomerValue);
+
         this.data.push(newCustomerValue); // push customer to the list
         return newCustomerValue;
     }
