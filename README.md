@@ -10,6 +10,8 @@ Features:
 * ANGULAR
 * RWD
 * MOCHA
+
+Overview:
 ![Alt text](build/assets/images/Customers%20List.jpg "Customers list")
 
 
