@@ -10,6 +10,8 @@ Features:
 * ANGULAR
 * RWD
 * MOCHA
+![Alt text](build/assets/images/Customers%20List.jpg "Customers list")
+
 
 ## Installing
 You need first to clone the repo and to run command:

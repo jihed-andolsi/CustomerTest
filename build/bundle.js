@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -33,16 +33,18 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
 /******/
-/******/ 	// define getter function for harmory exports
+/******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		Object.defineProperty(exports, name, {
-/******/ 			configurable: false,
-/******/ 			enumerable: true,
-/******/ 			get: getter
-/******/ 		});
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -66,15 +68,15 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
   !*** ./~/@uirouter/core/lib/common/common.js ***!
   \***********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Random utility functions used in the UI-Router code
@@ -722,17 +724,17 @@ exports.silentRejection = function (error) {
 };
 //# sourceMappingURL=common.js.map
 
-/***/ },
+/***/ }),
 /* 1 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
   !*** ./~/@uirouter/core/lib/common/predicates.js ***!
   \***************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** Predicates
  *
@@ -780,17 +782,17 @@ exports.isInjectable = isInjectable;
 exports.isPromise = hof_1.and(exports.isObject, hof_1.pipe(hof_1.prop('then'), exports.isFunction));
 //# sourceMappingURL=predicates.js.map
 
-/***/ },
+/***/ }),
 /* 2 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************!*\
   !*** ./~/@uirouter/core/lib/common/hof.js ***!
   \********************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * Higher order functions
  *
@@ -1036,17 +1038,17 @@ function pattern(struct) {
 exports.pattern = pattern;
 //# sourceMappingURL=hof.js.map
 
-/***/ },
+/***/ }),
 /* 3 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************************!*\
   !*** ./~/@uirouter/core/lib/common/coreservices.js ***!
   \*****************************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.notImplemented = function (fnname) { return function () {
     throw new Error(fnname + "(): No coreservices implementation for UI-Router is loaded.");
@@ -1058,17 +1060,17 @@ var services = {
 exports.services = services;
 //# sourceMappingURL=coreservices.js.map
 
-/***/ },
+/***/ }),
 /* 4 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************!*\
   !*** ./~/@uirouter/core/lib/index.js ***!
   \***************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * @coreapi
  * @module common
@@ -1091,17 +1093,17 @@ __export(__webpack_require__(/*! ./vanilla */ 75));
 __export(__webpack_require__(/*! ./interface */ 68));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 5 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************!*\
   !*** ./~/@uirouter/core/lib/common/strings.js ***!
   \************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * Functions that manipulate strings
  *
@@ -1254,17 +1256,17 @@ exports.joinNeighborsR = joinNeighborsR;
 ;
 //# sourceMappingURL=strings.js.map
 
-/***/ },
+/***/ }),
 /* 6 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************!*\
   !*** ./~/@uirouter/core/lib/common/trace.js ***!
   \**********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * # Transition tracing (debug)
@@ -1508,17 +1510,17 @@ var trace = new Trace();
 exports.trace = trace;
 //# sourceMappingURL=trace.js.map
 
-/***/ },
+/***/ }),
 /* 7 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
   !*** ./~/@uirouter/core/lib/state/targetState.js ***!
   \***************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * @coreapi
  * @module state
@@ -1633,17 +1635,17 @@ TargetState.isDef = function (obj) {
 exports.TargetState = TargetState;
 //# sourceMappingURL=targetState.js.map
 
-/***/ },
+/***/ }),
 /* 8 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************!*\
   !*** ./~/@uirouter/core/lib/params/param.js ***!
   \**********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -1842,17 +1844,17 @@ var Param = (function () {
 exports.Param = Param;
 //# sourceMappingURL=param.js.map
 
-/***/ },
+/***/ }),
 /* 9 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
   !*** ./~/@uirouter/core/lib/transition/interface.js ***!
   \******************************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var TransitionHookPhase;
 (function (TransitionHookPhase) {
@@ -1869,34 +1871,34 @@ var TransitionHookScope;
 })(TransitionHookScope = exports.TransitionHookScope || (exports.TransitionHookScope = {}));
 //# sourceMappingURL=interface.js.map
 
-/***/ },
+/***/ }),
 /* 10 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************!*\
   !*** ./~/angular-ui-router/lib/angular.js ***!
   \********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var ng_from_import = __webpack_require__(/*! angular */ 30);
 var ng_from_global = angular;
 exports.ng = (ng_from_import && ng_from_import.module) ? ng_from_import : ng_from_global;
 //# sourceMappingURL=angular.js.map
 
-/***/ },
+/***/ }),
 /* 11 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
   !*** ./~/@uirouter/core/lib/resolve/resolvable.js ***!
   \****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -2030,21 +2032,21 @@ Resolvable.fromData = function (token, data) {
 exports.Resolvable = Resolvable;
 //# sourceMappingURL=resolvable.js.map
 
-/***/ },
+/***/ }),
 /* 12 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************************!*\
   !*** ./~/@uirouter/core/lib/transition/rejectFactory.js ***!
   \**********************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /**
  * @coreapi
  * @module transition
  */ /** for typedoc */
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
 var strings_1 = __webpack_require__(/*! ../common/strings */ 5);
@@ -2130,17 +2132,17 @@ var Rejection = (function () {
 exports.Rejection = Rejection;
 //# sourceMappingURL=rejectFactory.js.map
 
-/***/ },
+/***/ }),
 /* 13 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************!*\
   !*** ./~/@uirouter/core/lib/transition/transitionHook.js ***!
   \***********************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -2361,17 +2363,17 @@ TransitionHook.THROW_ERROR = function (hook) { return function (error) {
 exports.TransitionHook = TransitionHook;
 //# sourceMappingURL=transitionHook.js.map
 
-/***/ },
+/***/ }),
 /* 14 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/utils.js ***!
   \***********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @internalapi
@@ -2440,17 +2442,17 @@ function locationPluginFactory(name, isHtml5, serviceClass, configurationClass) 
 exports.locationPluginFactory = locationPluginFactory;
 //# sourceMappingURL=utils.js.map
 
-/***/ },
+/***/ }),
 /* 15 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************!*\
   !*** ./~/@uirouter/core/lib/common/glob.js ***!
   \*********************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -2534,17 +2536,17 @@ var Glob = (function () {
 exports.Glob = Glob;
 //# sourceMappingURL=glob.js.map
 
-/***/ },
+/***/ }),
 /* 16 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************!*\
   !*** ./~/@uirouter/core/lib/common/index.js ***!
   \**********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -2560,17 +2562,17 @@ __export(__webpack_require__(/*! ./strings */ 5));
 __export(__webpack_require__(/*! ./trace */ 6));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 17 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
   !*** ./~/@uirouter/core/lib/path/pathFactory.js ***!
   \**************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /** @module path */ /** for typedoc */
 Object.defineProperty(exports, "__esModule", { value: true });
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
@@ -2744,17 +2746,17 @@ PathUtils.paramValues = function (path) {
 exports.PathUtils = PathUtils;
 //# sourceMappingURL=pathFactory.js.map
 
-/***/ },
+/***/ }),
 /* 18 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
   !*** ./~/@uirouter/core/lib/resolve/resolveContext.js ***!
   \********************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module resolve */
 /** for typedoc */
@@ -2955,17 +2957,17 @@ var UIInjectorImpl = (function () {
 }());
 //# sourceMappingURL=resolveContext.js.map
 
-/***/ },
+/***/ }),
 /* 19 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
   !*** ./~/@uirouter/core/lib/transition/transition.js ***!
   \*******************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -3593,17 +3595,17 @@ Transition.diToken = Transition;
 exports.Transition = Transition;
 //# sourceMappingURL=transition.js.map
 
-/***/ },
+/***/ }),
 /* 20 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************!*\
   !*** ./~/@uirouter/core/lib/url/urlMatcher.js ***!
   \************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -4107,17 +4109,17 @@ UrlMatcher.nameValidator = /^\w+([-.]+\w+)*(?:\[\])?$/;
 exports.UrlMatcher = UrlMatcher;
 //# sourceMappingURL=urlMatcher.js.map
 
-/***/ },
+/***/ }),
 /* 21 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/baseLocationService.js ***!
   \*************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * @internalapi
  * @module vanilla
@@ -4163,17 +4165,17 @@ var BaseLocationServices = (function () {
 exports.BaseLocationServices = BaseLocationServices;
 //# sourceMappingURL=baseLocationService.js.map
 
-/***/ },
+/***/ }),
 /* 22 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************!*\
   !*** ./~/@uirouter/core/lib/common/queue.js ***!
   \**********************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * @module common
  */ /** for typedoc */
@@ -4220,17 +4222,17 @@ var Queue = (function () {
 exports.Queue = Queue;
 //# sourceMappingURL=queue.js.map
 
-/***/ },
+/***/ }),
 /* 23 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
   !*** ./~/@uirouter/core/lib/params/paramType.js ***!
   \**************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -4373,17 +4375,17 @@ function ArrayType(type, mode) {
 }
 //# sourceMappingURL=paramType.js.map
 
-/***/ },
+/***/ }),
 /* 24 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
   !*** ./~/@uirouter/core/lib/path/pathNode.js ***!
   \***********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module path */ /** for typedoc */
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
@@ -4461,17 +4463,17 @@ var PathNode = (function () {
 exports.PathNode = PathNode;
 //# sourceMappingURL=pathNode.js.map
 
-/***/ },
+/***/ }),
 /* 25 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
   !*** ./~/@uirouter/core/lib/state/stateObject.js ***!
   \***************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
 var hof_1 = __webpack_require__(/*! ../common/hof */ 2);
@@ -4586,17 +4588,17 @@ StateObject.isState = function (obj) {
 exports.StateObject = StateObject;
 //# sourceMappingURL=stateObject.js.map
 
-/***/ },
+/***/ }),
 /* 26 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
   !*** ./~/@uirouter/core/lib/transition/hookRegistry.js ***!
   \*********************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -4753,17 +4755,17 @@ function makeEvent(registry, transitionService, eventType) {
 exports.makeEvent = makeEvent;
 //# sourceMappingURL=hookRegistry.js.map
 
-/***/ },
+/***/ }),
 /* 27 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
   !*** ./~/@uirouter/core/lib/transition/transitionService.js ***!
   \**************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -5003,17 +5005,17 @@ var TransitionService = (function () {
 exports.TransitionService = TransitionService;
 //# sourceMappingURL=transitionService.js.map
 
-/***/ },
+/***/ }),
 /* 28 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************!*\
   !*** ./~/angular-ui-router/lib/services.js ***!
   \*********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * # Angular 1 types
@@ -5130,17 +5132,17 @@ exports.getLocals = function (ctx) {
 };
 //# sourceMappingURL=services.js.map
 
-/***/ },
+/***/ }),
 /* 29 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
   !*** ./~/angular-ui-router/lib/statebuilders/views.js ***!
   \********************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @uirouter/core */ 4);
 function getNg1ViewConfigFactory() {
@@ -5250,30 +5252,30 @@ var Ng1ViewConfig = (function () {
 exports.Ng1ViewConfig = Ng1ViewConfig;
 //# sourceMappingURL=views.js.map
 
-/***/ },
+/***/ }),
 /* 30 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************!*\
   !*** ./~/angular/index.js ***!
   \****************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./angular */ 88);
 module.exports = angular;
 
 
-/***/ },
+/***/ }),
 /* 31 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************!*\
   !*** ./~/@uirouter/core/lib/globals.js ***!
   \*****************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -5312,17 +5314,17 @@ var UIRouterGlobals = (function () {
 exports.UIRouterGlobals = UIRouterGlobals;
 //# sourceMappingURL=globals.js.map
 
-/***/ },
+/***/ }),
 /* 32 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/lazyLoad.js ***!
   \************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var coreservices_1 = __webpack_require__(/*! ../common/coreservices */ 3);
 /**
@@ -5420,17 +5422,17 @@ function lazyLoadState(transition, state) {
 exports.lazyLoadState = lazyLoadState;
 //# sourceMappingURL=lazyLoad.js.map
 
-/***/ },
+/***/ }),
 /* 33 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
   !*** ./~/@uirouter/core/lib/params/paramTypes.js ***!
   \***************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -5587,17 +5589,17 @@ function initDefaultTypes() {
 initDefaultTypes();
 //# sourceMappingURL=paramTypes.js.map
 
-/***/ },
+/***/ }),
 /* 34 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
   !*** ./~/@uirouter/core/lib/params/stateParams.js ***!
   \****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -5642,17 +5644,17 @@ var StateParams = (function () {
 exports.StateParams = StateParams;
 //# sourceMappingURL=stateParams.js.map
 
-/***/ },
+/***/ }),
 /* 35 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************!*\
   !*** ./~/@uirouter/core/lib/resolve/interface.js ***!
   \***************************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @internalapi */
 exports.resolvePolicies = {
@@ -5668,17 +5670,17 @@ exports.resolvePolicies = {
 };
 //# sourceMappingURL=interface.js.map
 
-/***/ },
+/***/ }),
 /* 36 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************!*\
   !*** ./~/@uirouter/core/lib/router.js ***!
   \****************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -5863,17 +5865,17 @@ var UIRouter = (function () {
 exports.UIRouter = UIRouter;
 //# sourceMappingURL=router.js.map
 
-/***/ },
+/***/ }),
 /* 37 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
   !*** ./~/@uirouter/core/lib/state/stateBuilder.js ***!
   \****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module state */ /** for typedoc */
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
@@ -6149,17 +6151,17 @@ var StateBuilder = (function () {
 exports.StateBuilder = StateBuilder;
 //# sourceMappingURL=stateBuilder.js.map
 
-/***/ },
+/***/ }),
 /* 38 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
   !*** ./~/@uirouter/core/lib/state/stateMatcher.js ***!
   \****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module state */ /** for typedoc */
 var predicates_1 = __webpack_require__(/*! ../common/predicates */ 1);
@@ -6223,17 +6225,17 @@ var StateMatcher = (function () {
 exports.StateMatcher = StateMatcher;
 //# sourceMappingURL=stateMatcher.js.map
 
-/***/ },
+/***/ }),
 /* 39 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
   !*** ./~/@uirouter/core/lib/state/stateQueueManager.js ***!
   \*********************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module state */ /** for typedoc */
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
@@ -6326,17 +6328,17 @@ var StateQueueManager = (function () {
 exports.StateQueueManager = StateQueueManager;
 //# sourceMappingURL=stateQueueManager.js.map
 
-/***/ },
+/***/ }),
 /* 40 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************************!*\
   !*** ./~/@uirouter/core/lib/state/stateRegistry.js ***!
   \*****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * @coreapi
  * @module state
@@ -6493,17 +6495,17 @@ var StateRegistry = (function () {
 exports.StateRegistry = StateRegistry;
 //# sourceMappingURL=stateRegistry.js.map
 
-/***/ },
+/***/ }),
 /* 41 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
   !*** ./~/@uirouter/core/lib/state/stateService.js ***!
   \****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -7077,17 +7079,17 @@ var StateService = (function () {
 exports.StateService = StateService;
 //# sourceMappingURL=stateService.js.map
 
-/***/ },
+/***/ }),
 /* 42 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************!*\
   !*** ./~/@uirouter/core/lib/transition/hookBuilder.js ***!
   \********************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * @coreapi
  * @module transition
@@ -7207,17 +7209,17 @@ function tupleSort(reverseDepthSort) {
 }
 //# sourceMappingURL=hookBuilder.js.map
 
-/***/ },
+/***/ }),
 /* 43 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************************!*\
   !*** ./~/@uirouter/core/lib/transition/transitionEventType.js ***!
   \****************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var transitionHook_1 = __webpack_require__(/*! ./transitionHook */ 13);
 /**
@@ -7246,17 +7248,17 @@ var TransitionEventType = (function () {
 exports.TransitionEventType = TransitionEventType;
 //# sourceMappingURL=transitionEventType.js.map
 
-/***/ },
+/***/ }),
 /* 44 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
   !*** ./~/@uirouter/core/lib/url/urlMatcherFactory.js ***!
   \*******************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @internalapi
@@ -7384,17 +7386,17 @@ var UrlMatcherFactory = (function () {
 exports.UrlMatcherFactory = UrlMatcherFactory;
 //# sourceMappingURL=urlMatcherFactory.js.map
 
-/***/ },
+/***/ }),
 /* 45 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
   !*** ./~/@uirouter/core/lib/url/urlRouter.js ***!
   \***********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @internalapi
@@ -7668,17 +7670,17 @@ function getHandlerFn(handler) {
 }
 //# sourceMappingURL=urlRouter.js.map
 
-/***/ },
+/***/ }),
 /* 46 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************!*\
   !*** ./~/@uirouter/core/lib/url/urlRule.js ***!
   \*********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -7888,17 +7890,17 @@ var BaseUrlRule = (function () {
 exports.BaseUrlRule = BaseUrlRule;
 //# sourceMappingURL=urlRule.js.map
 
-/***/ },
+/***/ }),
 /* 47 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************!*\
   !*** ./~/@uirouter/core/lib/url/urlService.js ***!
   \************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * @coreapi
  * @module url
@@ -7979,17 +7981,17 @@ UrlService.locationConfigStub = makeStub(locationConfigFns);
 exports.UrlService = UrlService;
 //# sourceMappingURL=urlService.js.map
 
-/***/ },
+/***/ }),
 /* 48 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/browserLocationConfig.js ***!
   \***************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @internalapi
@@ -8037,17 +8039,17 @@ var BrowserLocationConfig = (function () {
 exports.BrowserLocationConfig = BrowserLocationConfig;
 //# sourceMappingURL=browserLocationConfig.js.map
 
-/***/ },
+/***/ }),
 /* 49 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/hashLocationService.js ***!
   \*************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -8089,17 +8091,17 @@ var HashLocationService = (function (_super) {
 exports.HashLocationService = HashLocationService;
 //# sourceMappingURL=hashLocationService.js.map
 
-/***/ },
+/***/ }),
 /* 50 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/injector.js ***!
   \**************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @internalapi
@@ -8200,17 +8202,17 @@ exports.$injector = {
 };
 //# sourceMappingURL=injector.js.map
 
-/***/ },
+/***/ }),
 /* 51 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/memoryLocationConfig.js ***!
   \**************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var predicates_1 = __webpack_require__(/*! ../common/predicates */ 1);
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
@@ -8236,17 +8238,17 @@ var MemoryLocationConfig = (function () {
 exports.MemoryLocationConfig = MemoryLocationConfig;
 //# sourceMappingURL=memoryLocationConfig.js.map
 
-/***/ },
+/***/ }),
 /* 52 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/memoryLocationService.js ***!
   \***************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -8281,17 +8283,17 @@ var MemoryLocationService = (function (_super) {
 exports.MemoryLocationService = MemoryLocationService;
 //# sourceMappingURL=memoryLocationService.js.map
 
-/***/ },
+/***/ }),
 /* 53 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/pushStateLocationService.js ***!
   \******************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -8344,17 +8346,17 @@ var PushStateLocationService = (function (_super) {
 exports.PushStateLocationService = PushStateLocationService;
 //# sourceMappingURL=pushStateLocationService.js.map
 
-/***/ },
+/***/ }),
 /* 54 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/q.js ***!
   \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @internalapi
@@ -8410,17 +8412,17 @@ exports.$q = {
 };
 //# sourceMappingURL=q.js.map
 
-/***/ },
+/***/ }),
 /* 55 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./~/@uirouter/core/lib/view/view.js ***!
   \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @coreapi
@@ -8704,17 +8706,17 @@ ViewService.matches = function (uiViewsByFqn, uiView) { return function (viewCon
 exports.ViewService = ViewService;
 //# sourceMappingURL=view.js.map
 
-/***/ },
+/***/ }),
 /* 56 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
   !*** ./~/angular-ui-router/lib/stateProvider.js ***!
   \**************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module ng1 */ /** for typedoc */
 var core_1 = __webpack_require__(/*! @uirouter/core */ 4);
@@ -8855,17 +8857,17 @@ var StateProvider = (function () {
 exports.StateProvider = StateProvider;
 //# sourceMappingURL=stateProvider.js.map
 
-/***/ },
+/***/ }),
 /* 57 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************************************!*\
   !*** ./~/angular-ui-router/lib/urlRouterProvider.js ***!
   \******************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module url */ /** */
 var core_1 = __webpack_require__(/*! @uirouter/core */ 4);
@@ -9072,16 +9074,17 @@ var UrlRouterProvider = (function () {
 exports.UrlRouterProvider = UrlRouterProvider;
 //# sourceMappingURL=urlRouterProvider.js.map
 
-/***/ },
+/***/ }),
 /* 58 */
 /* exports provided: default */
 /* all exports used */
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
   \*******************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(/*! angular */ 30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_ui_router__ = __webpack_require__(/*! angular-ui-router */ 81);
@@ -9106,19 +9109,19 @@ __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module(MODULE_NAME, [__WEBPACK_I
     .service('mainService', __WEBPACK_IMPORTED_MODULE_2__main_mainService___default.a)
     .service('customerService', __WEBPACK_IMPORTED_MODULE_3__customer_customerService__["a" /* default */]);
 
-/* harmony default export */ exports["default"] = MODULE_NAME;
+/* harmony default export */ __webpack_exports__["default"] = (MODULE_NAME);
 
-/***/ },
+/***/ }),
 /* 59 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/coreResolvables.js ***!
   \*******************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module hooks */ /** */
 var transition_1 = __webpack_require__(/*! ../transition/transition */ 19);
@@ -9137,17 +9140,17 @@ exports.registerAddCoreResolvables = function (transitionService) {
 };
 //# sourceMappingURL=coreResolvables.js.map
 
-/***/ },
+/***/ }),
 /* 60 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/ignoredTransition.js ***!
   \*********************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /** @module hooks */ /** */
 Object.defineProperty(exports, "__esModule", { value: true });
 var trace_1 = __webpack_require__(/*! ../common/trace */ 6);
@@ -9179,17 +9182,17 @@ exports.registerIgnoredTransitionHook = function (transitionService) {
 };
 //# sourceMappingURL=ignoredTransition.js.map
 
-/***/ },
+/***/ }),
 /* 61 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/invalidTransition.js ***!
   \*********************************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /** @module hooks */ /** */
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
@@ -9209,17 +9212,17 @@ exports.registerInvalidTransitionHook = function (transitionService) {
 };
 //# sourceMappingURL=invalidTransition.js.map
 
-/***/ },
+/***/ }),
 /* 62 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/onEnterExitRetain.js ***!
   \*********************************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * A factory which creates an onEnter, onExit or onRetain transition hook function
@@ -9277,17 +9280,17 @@ exports.registerOnEnterHook = function (transitionService) {
 };
 //# sourceMappingURL=onEnterExitRetain.js.map
 
-/***/ },
+/***/ }),
 /* 63 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/redirectTo.js ***!
   \**************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module hooks */ /** */
 var predicates_1 = __webpack_require__(/*! ../common/predicates */ 1);
@@ -9325,17 +9328,17 @@ exports.registerRedirectToHook = function (transitionService) {
 };
 //# sourceMappingURL=redirectTo.js.map
 
-/***/ },
+/***/ }),
 /* 64 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/resolve.js ***!
   \***********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module hooks */
 /** for typedoc */
@@ -9379,17 +9382,17 @@ exports.registerLazyResolveState = function (transitionService) {
 };
 //# sourceMappingURL=resolve.js.map
 
-/***/ },
+/***/ }),
 /* 65 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/updateGlobals.js ***!
   \*****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
 /**
@@ -9425,17 +9428,17 @@ exports.registerUpdateGlobalState = function (transitionService) {
 };
 //# sourceMappingURL=updateGlobals.js.map
 
-/***/ },
+/***/ }),
 /* 66 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/url.js ***!
   \*******************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * A [[TransitionHookFn]] which updates the URL after a successful transition
@@ -9461,17 +9464,17 @@ exports.registerUpdateUrl = function (transitionService) {
 };
 //# sourceMappingURL=url.js.map
 
-/***/ },
+/***/ }),
 /* 67 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************!*\
   !*** ./~/@uirouter/core/lib/hooks/views.js ***!
   \*********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module hooks */ /** for typedoc */
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
@@ -9519,17 +9522,17 @@ exports.registerActivateViews = function (transitionService) {
 };
 //# sourceMappingURL=views.js.map
 
-/***/ },
+/***/ }),
 /* 68 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./~/@uirouter/core/lib/interface.js ***!
   \*******************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * # Core classes and interfaces
  *
@@ -9551,17 +9554,17 @@ var UIRouterPluginBase = (function () {
 exports.UIRouterPluginBase = UIRouterPluginBase;
 //# sourceMappingURL=interface.js.map
 
-/***/ },
+/***/ }),
 /* 69 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**********************************************!*\
   !*** ./~/@uirouter/core/lib/params/index.js ***!
   \**********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -9572,17 +9575,17 @@ __export(__webpack_require__(/*! ./stateParams */ 34));
 __export(__webpack_require__(/*! ./paramType */ 23));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 70 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************!*\
   !*** ./~/@uirouter/core/lib/path/index.js ***!
   \********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -9592,17 +9595,17 @@ __export(__webpack_require__(/*! ./pathNode */ 24));
 __export(__webpack_require__(/*! ./pathFactory */ 17));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 71 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
   !*** ./~/@uirouter/core/lib/resolve/index.js ***!
   \***********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -9613,17 +9616,17 @@ __export(__webpack_require__(/*! ./resolvable */ 11));
 __export(__webpack_require__(/*! ./resolveContext */ 18));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 72 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*********************************************!*\
   !*** ./~/@uirouter/core/lib/state/index.js ***!
   \*********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -9637,17 +9640,17 @@ __export(__webpack_require__(/*! ./stateService */ 41));
 __export(__webpack_require__(/*! ./targetState */ 7));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 73 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
   !*** ./~/@uirouter/core/lib/transition/index.js ***!
   \**************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -9676,17 +9679,17 @@ __export(__webpack_require__(/*! ./transitionEventType */ 43));
 __export(__webpack_require__(/*! ./transitionService */ 27));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 74 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./~/@uirouter/core/lib/url/index.js ***!
   \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -9698,17 +9701,17 @@ __export(__webpack_require__(/*! ./urlRule */ 46));
 __export(__webpack_require__(/*! ./urlService */ 47));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 75 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla.js ***!
   \*****************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -9721,17 +9724,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! ./vanilla/index */ 76));
 //# sourceMappingURL=vanilla.js.map
 
-/***/ },
+/***/ }),
 /* 76 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/index.js ***!
   \***********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -9748,17 +9751,17 @@ __export(__webpack_require__(/*! ./utils */ 14));
 __export(__webpack_require__(/*! ./plugins */ 77));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 77 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************!*\
   !*** ./~/@uirouter/core/lib/vanilla/plugins.js ***!
   \*************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @internalapi
@@ -9788,17 +9791,17 @@ exports.pushStateLocationPlugin = utils_1.locationPluginFactory("vanilla.pushSta
 exports.memoryLocationPlugin = utils_1.locationPluginFactory("vanilla.memoryLocation", false, memoryLocationService_1.MemoryLocationService, memoryLocationConfig_1.MemoryLocationConfig);
 //# sourceMappingURL=plugins.js.map
 
-/***/ },
+/***/ }),
 /* 78 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************!*\
   !*** ./~/@uirouter/core/lib/view/index.js ***!
   \********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
@@ -9806,17 +9809,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! ./view */ 55));
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 79 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
   !*** ./~/angular-ui-router/lib/directives/stateDirectives.js ***!
   \***************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * # Angular 1 Directives
@@ -10388,17 +10391,17 @@ angular_1.ng.module('ui.router.state')
     .directive('uiState', uiState);
 //# sourceMappingURL=stateDirectives.js.map
 
-/***/ },
+/***/ }),
 /* 80 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
   !*** ./~/angular-ui-router/lib/directives/viewDirective.js ***!
   \*************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @ng1api
@@ -10689,17 +10692,17 @@ angular_1.ng.module('ui.router.state').directive('uiView', exports.uiView);
 angular_1.ng.module('ui.router.state').directive('uiView', $ViewDirectiveFill);
 //# sourceMappingURL=viewDirective.js.map
 
-/***/ },
+/***/ }),
 /* 81 */
-/* unknown exports provided */
+/* no static exports found */
 /* exports used: default */
 /*!******************************************!*\
   !*** ./~/angular-ui-router/lib/index.js ***!
   \******************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * Main entry point for angular 1.x build
  * @module ng1
@@ -10723,17 +10726,17 @@ __webpack_require__(/*! ./viewScroll */ 87);
 exports.default = "ui.router";
 //# sourceMappingURL=index.js.map
 
-/***/ },
+/***/ }),
 /* 82 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!************************************************!*\
   !*** ./~/angular-ui-router/lib/injectables.js ***!
   \************************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /**
  * # Angular 1 injectable services
  *
@@ -11102,17 +11105,17 @@ var $urlMatcherFactory;
 var $urlMatcherFactoryProvider;
 //# sourceMappingURL=injectables.js.map
 
-/***/ },
+/***/ }),
 /* 83 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*****************************************************!*\
   !*** ./~/angular-ui-router/lib/locationServices.js ***!
   \*****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @uirouter/core */ 4);
 /**
@@ -11188,17 +11191,17 @@ var Ng1LocationServices = (function () {
 exports.Ng1LocationServices = Ng1LocationServices;
 //# sourceMappingURL=locationServices.js.map
 
-/***/ },
+/***/ }),
 /* 84 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!*************************************************!*\
   !*** ./~/angular-ui-router/lib/stateFilters.js ***!
   \*************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 /** @module ng1 */ /** for typedoc */
 Object.defineProperty(exports, "__esModule", { value: true });
 var angular_1 = __webpack_require__(/*! ./angular */ 10);
@@ -11245,17 +11248,17 @@ angular_1.ng.module('ui.router.state')
     .filter('includedByState', $IncludedByStateFilter);
 //# sourceMappingURL=stateFilters.js.map
 
-/***/ },
+/***/ }),
 /* 85 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************!*\
   !*** ./~/angular-ui-router/lib/statebuilders/onEnterExitRetain.js ***!
   \********************************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module ng1 */ /** */
 var core_1 = __webpack_require__(/*! @uirouter/core */ 4);
@@ -11281,17 +11284,17 @@ exports.getStateHookBuilder = function (hookName) {
 };
 //# sourceMappingURL=onEnterExitRetain.js.map
 
-/***/ },
+/***/ }),
 /* 86 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
   !*** ./~/angular-ui-router/lib/templateFactory.js ***!
   \****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module view */
 /** for typedoc */
@@ -11486,17 +11489,17 @@ var scopeBindings = function (bindingsObj) { return Object.keys(bindingsObj || {
     .map(function (tuple) { return ({ name: tuple[1][2] || tuple[0], type: tuple[1][1] }); }); };
 //# sourceMappingURL=templateFactory.js.map
 
-/***/ },
+/***/ }),
 /* 87 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
   !*** ./~/angular-ui-router/lib/viewScroll.js ***!
   \***********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module ng1 */ /** */
 var angular_1 = __webpack_require__(/*! ./angular */ 10);
@@ -11520,14 +11523,14 @@ function $ViewScrollProvider() {
 angular_1.ng.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProvider);
 //# sourceMappingURL=viewScroll.js.map
 
-/***/ },
+/***/ }),
 /* 88 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
 /*!******************************!*\
   !*** ./~/angular/angular.js ***!
   \******************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 /**
  * @license AngularJS v1.6.9
@@ -45889,14 +45892,14 @@ $provide.value("$locale", {
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
-/***/ },
+/***/ }),
 /* 89 */
 /* exports provided: default */
 /* exports used: default */
 /*!*******************************!*\
   !*** ./src/app/app.routes.ts ***!
   \*******************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_mainController__ = __webpack_require__(/*! ./main/mainController */ 96);
@@ -46006,16 +46009,16 @@ class config {
 }
 
 config.$inject = ['$stateProvider', '$urlRouterProvider']; // inject services to config class
-/* harmony default export */ exports["a"] = config;
+/* harmony default export */ __webpack_exports__["a"] = (config);
 
-/***/ },
+/***/ }),
 /* 90 */
 /* exports provided: default */
 /* exports used: default */
 /*!***************************************************!*\
   !*** ./src/app/customer/customerAddController.ts ***!
   \***************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
@@ -46049,17 +46052,17 @@ class customerAddController {
     }
 }
 customerAddController.$inject = ['$scope', 'customerService', '$state']; //inject service in controller
-/* harmony default export */ exports["a"] = customerAddController;
+/* harmony default export */ __webpack_exports__["a"] = (customerAddController);
 
 
-/***/ },
+/***/ }),
 /* 91 */
 /* exports provided: default */
 /* exports used: default */
 /*!****************************************************!*\
   !*** ./src/app/customer/customerEditController.ts ***!
   \****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
@@ -46089,17 +46092,17 @@ class customerEditController {
     }
 }
 customerEditController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject service in controller
-/* harmony default export */ exports["a"] = customerEditController;
+/* harmony default export */ __webpack_exports__["a"] = (customerEditController);
 
 
-/***/ },
+/***/ }),
 /* 92 */
 /* exports provided: default */
 /* exports used: default */
 /*!****************************************************!*\
   !*** ./src/app/customer/customerListController.ts ***!
   \****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
@@ -46111,17 +46114,17 @@ class customerListController {
     }
 }
 customerListController.$inject = ['$scope', 'customers'];  //inject service in controller
-/* harmony default export */ exports["a"] = customerListController;
+/* harmony default export */ __webpack_exports__["a"] = (customerListController);
 
 
-/***/ },
+/***/ }),
 /* 93 */
 /* exports provided: default */
 /* exports used: default */
 /*!********************************************************!*\
   !*** ./src/app/customer/customerNotFoundController.ts ***!
   \********************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
@@ -46132,17 +46135,17 @@ class customerNotFoundController {
 
     }
 }
-/* harmony default export */ exports["a"] = customerNotFoundController;
+/* harmony default export */ __webpack_exports__["a"] = (customerNotFoundController);
 
 
-/***/ },
+/***/ }),
 /* 94 */
 /* exports provided: default */
 /* exports used: default */
 /*!*********************************************!*\
   !*** ./src/app/customer/customerService.ts ***!
   \*********************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
@@ -46151,7 +46154,7 @@ class customerNotFoundController {
 class customerService{
     constructor(){
         // data json
-        this.data = [
+        this.setData([
             {
                 "customerID": 1,
                 "name": {
@@ -46207,7 +46210,11 @@ class customerService{
                 "lastContact": "2017-03-18T12:20:06.702Z",
                 "customerLifetimeValue": 1019.91
             }
-        ]
+        ]);
+    }
+
+    setData(data){
+        this.data = data;
     }
     // get full list of customers, here if we have an API we should use pagination
     getList(){
@@ -46228,8 +46235,15 @@ class customerService{
 
     // edit customer by id, return boolean
     edit(customerID, newCustomerValue){
-        let custo = this.getById(customerID);
-        custo = newCustomerValue;
+        //let custo = this.getById(customerID);
+        //custo = newCustomerValue;
+        this.data.filter((customer, k) =>{
+            if(customer.customerID == customerID){
+                this.data[k] = newCustomerValue;
+                return customer;
+            }
+        });
+
         return true;
     }
 
@@ -46238,7 +46252,9 @@ class customerService{
     add(newCustomerValue){
         let list = this.getList();
         let counter = Math.max(...list.map(e=>{return e.customerID})) + 1; // get new id to setup new customer
-        newCustomerValue.customerID = counter; //set the new id to the new customer
+        //newCustomerValue.customerID = counter; //set the new id to the new customer
+        newCustomerValue = Object.assign({customerID: counter}, newCustomerValue);
+
         this.data.push(newCustomerValue); // push customer to the list
         return newCustomerValue;
     }
@@ -46256,16 +46272,16 @@ class customerService{
     }
 }
 
-/* harmony default export */ exports["a"] = customerService;
+/* harmony default export */ __webpack_exports__["a"] = (customerService);
 
-/***/ },
+/***/ }),
 /* 95 */
 /* exports provided: default */
 /* exports used: default */
 /*!****************************************************!*\
   !*** ./src/app/customer/customerShowController.ts ***!
   \****************************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
@@ -46290,17 +46306,17 @@ class customerController {
     }
 }
 customerController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject services to controller
-/* harmony default export */ exports["a"] = customerController;
+/* harmony default export */ __webpack_exports__["a"] = (customerController);
 
 
-/***/ },
+/***/ }),
 /* 96 */
 /* exports provided: default */
 /* exports used: default */
 /*!****************************************!*\
   !*** ./src/app/main/mainController.ts ***!
   \****************************************/
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
@@ -46312,32 +46328,32 @@ class mainController {
     }
 }
 
-/* harmony default export */ exports["a"] = mainController;
+/* harmony default export */ __webpack_exports__["a"] = (mainController);
 
 
-/***/ },
+/***/ }),
 /* 97 */
-/* unknown exports provided */
+/* no static exports found */
 /* exports used: default */
 /*!*************************************!*\
   !*** ./src/app/main/mainService.ts ***!
   \*************************************/
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 
 
-/***/ },
+/***/ }),
 /* 98 */
-/* unknown exports provided */
+/* no static exports found */
 /* all exports used */
-/*!*****************!*\
-  !*** multi app ***!
-  \*****************/
-/***/ function(module, exports, __webpack_require__) {
+/*!*************************************!*\
+  !*** multi ./src/app/app.module.ts ***!
+  \*************************************/
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! ./src/app/app.module.ts */58);
 
 
-/***/ }
+/***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map
