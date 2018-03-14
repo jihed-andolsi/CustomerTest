@@ -96,6 +96,16 @@ class customerService{
         let counter = Math.max(...list.map(e=>{return e.customerID})) + 1;
         newCustomerValue.customerID = counter;
         this.data.push(newCustomerValue);
+        return newCustomerValue;
+    }
+
+    del(customerID){
+        this.data = this.getList().filter(customer =>{
+            if(customer.customerID != customerID){
+                return customer;
+            }
+        });
+
         return true;
     }
 }
