@@ -6,6 +6,7 @@ The principal functionality of this project is customer management, it implement
 
 Features:
 * ES6
+* Webpack
 * ANGULAR
 * RWD
 * MOCHA
