@@ -21,7 +21,9 @@ module.exports = {
     plugins: [
         new CopyWebpackPlugin([
             { from: './src/assets', to:'./assets', force: true},
-            { from: './src/app/*/*/*.html', to: './views', force: true }
+            { from: './src/app/*/*/*.html', to: './views', force: true },
+            { from: './src/app/*/*.html', to: './views', force: true }
+
         ]),
         new HtmlWebpackPlugin({
             template: './src/index.html',
