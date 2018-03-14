@@ -4,3 +4,9 @@
 <p><span>Birthday:</span> {{ customer.birthday }}</p>
 <p><span>Gender:</span> {{ customer.gender }}</p>
 
+<button type="button" class="btn btn-primary" ui-sref="App.edit_cutomer({customerId: customerId})">
+    edit
+</button>
+<button type="button" class="btn btn-danger" ui-sref="App.show_customer({customerId: customerId})">
+    Delete
+</button>
