@@ -3,9 +3,12 @@ Customer management
 
 ## Getting Started
 The principal functionality of this project is customer management, it implement a CRUD system. It is developed using Typescript and angular js 1.5. The application is responsive and run even in evergreen browsers. The unit test developed using the framework MOCHA.
-###### note
-__Only basic functionalities was tested__
 
+Features:
+* ES6
+* ANGULAR
+* RWD
+* MOCHA
 
 ## Installing
 You need first to clone the repo and to run command:
@@ -14,15 +17,17 @@ npm install
 ```
 
 ## Running
-If you need to start dev environment 
+If you need to start dev environment you can use this command:
 ```javascript
 npm run dev
 ```
-If you need to start prod environment 
+If you need to start prod environment you can use this command:
 ```javascript
 npm run build
 ```
-If you need to run tests:
+
+## Test
+Only basic functionalities was tested, to run tests please use:
 ```javascript
 npm run test
 ```
