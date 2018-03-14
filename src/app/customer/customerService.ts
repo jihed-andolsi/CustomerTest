@@ -1,8 +1,9 @@
 /**
- * Created by Andolsi on 28/02/2018.
+ * service customer to fetch some api, here we have localy stored data
  */
 class customerService{
     constructor(){
+        // data json
         this.data = [
             {
                 "customerID": 1,
@@ -61,17 +62,15 @@ class customerService{
             }
         ]
     }
+    // get full list of customers, here if we have an API we should use pagination
     getList(){
         return this.data;
     }
-    getById(id){
-        let [custo] = this.filterById(id);
-        return custo;
-    }
 
-    filterById(id){
+    // get customer by id, return object
+    getById(id){
         let list = this.getList();
-        let custo=  list.filter(customer =>{
+        let [custo]=  list.filter(customer =>{
             if(customer.customerID == id){
                 return customer;
             }
@@ -80,26 +79,26 @@ class customerService{
         return custo;
     }
 
+    // edit customer by id, return boolean
     edit(customerID, newCustomerValue){
-        let custos = this.filterById(customerID);
-        custos.map(e => {
-            e.name.first = newCustomerValue.name.first;
-            e.name.last = newCustomerValue.name.last;
-            e.birthday = newCustomerValue.birthday;
-            e.gender = newCustomerValue.gender;
-        })
+        let custo = this.getById(customerID);
+        custo = newCustomerValue;
         return true;
     }
 
+
+    // add customer to the list
     add(newCustomerValue){
         let list = this.getList();
-        let counter = Math.max(...list.map(e=>{return e.customerID})) + 1;
-        newCustomerValue.customerID = counter;
-        this.data.push(newCustomerValue);
+        let counter = Math.max(...list.map(e=>{return e.customerID})) + 1; // get new id to setup new customer
+        newCustomerValue.customerID = counter; //set the new id to the new customer
+        this.data.push(newCustomerValue); // push customer to the list
         return newCustomerValue;
     }
 
+    // delete customer from list
     del(customerID){
+        // filter list and get new list without customer to delete
         this.data = this.getList().filter(customer =>{
             if(customer.customerID != customerID){
                 return customer;
