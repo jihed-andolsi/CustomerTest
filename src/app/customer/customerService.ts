@@ -65,13 +65,38 @@ class customerService{
         return this.data;
     }
     getById(id){
+        let [custo] = this.filterById(id);
+        return custo;
+    }
+
+    filterById(id){
         let list = this.getList();
-        let [custo]=  list.filter(customer =>{
+        let custo=  list.filter(customer =>{
             if(customer.customerID == id){
                 return customer;
             }
         });
+
         return custo;
+    }
+
+    edit(customerID, newCustomerValue){
+        let custos = this.filterById(customerID);
+        custos.map(e => {
+            e.name.first = newCustomerValue.name.first;
+            e.name.last = newCustomerValue.name.last;
+            e.birthday = newCustomerValue.birthday;
+            e.gender = newCustomerValue.gender;
+        })
+        return true;
+    }
+
+    add(newCustomerValue){
+        let list = this.getList();
+        let counter = Math.max(...list.map(e=>{return e.customerID})) + 1;
+        newCustomerValue.customerID = counter;
+        this.data.push(newCustomerValue);
+        return true;
     }
 }
 

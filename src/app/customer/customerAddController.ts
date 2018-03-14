@@ -1,13 +1,12 @@
 class customerAddController {
-    constructor($scope) {
+    constructor($scope, customerService) {
         $scope.submitForm = ()=>{
             if ($scope.customerForm.$valid) {
-                alert('add customer');
-
-                let customer = $scope.customer;
+                let add = customerService.add($scope.customer)
+                alert(add);
             }
         }
     }
 }
-customerAddController.$inject = ['$scope'];
+customerAddController.$inject = ['$scope', 'customerService'];
 export default customerAddController;

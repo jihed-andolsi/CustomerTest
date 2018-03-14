@@ -27,6 +27,7 @@ class config {
                     customers : (customerService)=>{
                         return customerService.getList();
                     },
+
                 },
             })
 
@@ -42,6 +43,7 @@ class config {
                     customer : (customerService, $stateParams)=>{
                         return customerService.getById($stateParams.customerId);
                     },
+
                 },
             })
             .state('App.show_customer', {
@@ -67,9 +69,7 @@ class config {
                     },
                 },
                 resolve: {
-                    customer : (customerService, $stateParams)=>{
-                        return customerService.getById($stateParams.customerId);
-                    },
+
                 },
             })
     }

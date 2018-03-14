@@ -1,8 +1,16 @@
-class customerController {
-    constructor($scope, $stateParams, customer) {
+class customerEditController {
+    constructor($scope, $stateParams, customer, customerService) {
         $scope.customerId = $stateParams.customerId;
         $scope.customer = customer;
+
+        $scope.submitForm = ()=>{
+            if ($scope.customerForm.$valid) {
+                //let customer = $scope.customer;
+                let edit = customerService.edit($stateParams.customerId, $scope.customer);
+                alert(edit);
+            }
+        }
     }
 }
-customerController.$inject = ['$scope', '$stateParams', 'customer'];
-export default customerController;
+customerEditController.$inject = ['$scope', '$stateParams', 'customer', 'customerService'];
+export default customerEditController;
