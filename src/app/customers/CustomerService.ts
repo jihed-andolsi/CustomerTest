@@ -1,6 +1,8 @@
 /**
  * service customer to fetch some api, here we have localy stored data
  */
+
+import Customer from './Customer';
 class CustomerService{
     constructor(){
         // data json
@@ -64,7 +66,10 @@ class CustomerService{
     }
 
     setData(data){
-        this.data = data;
+        this.data = [];
+        data.map(e=>{
+            this.data.push(new Customer(e));
+        })
     }
     // get full list of customers, here if we have an API we should use pagination
     getList(){
@@ -90,7 +95,7 @@ class CustomerService{
         this.data.filter((customer, k) =>{
             if(customer.customerID == customerID){
                 this.data[k] = newCustomerValue;
-                return customer;
+                return new Customer(customer);
             }
         });
 

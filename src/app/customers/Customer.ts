@@ -1,13 +1,15 @@
 class Customer{
-    constructor(){
-        this.name = {
-            "first": "",
-            "last": "",
+    constructor(e){
+        let $this = this;
+        (typeof e != "undefined"  && e.hasOwnProperty('customerID')) ? $this.customerID = e.customerID : false;
+        $this.name = {
+            "first": (typeof e != "undefined"  && e.hasOwnProperty('name')) ? e.name.first : "",
+            "last": (typeof e != "undefined" && e.hasOwnProperty('name')) ? e.name.last : "",
         }
-        this.birthday = '';
-        this.gender = '';
-        this.lastContact = '';
-        this.customerLifetimeValue = 0;
+        $this.birthday = (typeof e != "undefined" && e.hasOwnProperty('birthday')) ? e.birthday : "";
+        $this.gender = (typeof e != "undefined" && e.hasOwnProperty('gender')) ? e.gender : "";
+        $this.lastContact = (typeof e != "undefined" && e.hasOwnProperty('lastContact')) ? e.lastContact : "";
+        $this.customerLifetimeValue = (typeof e != "undefined" && e.hasOwnProperty('customerLifetimeValue')) ? e.customerLifetimeValue : 0;
     }
 
     getFirstName(){
@@ -47,7 +49,7 @@ class Customer{
         this.lastContact = lastContact;
     }
 
-    getGender(){
+    getCustomerLifetimeValue(){
         return this.customerLifetimeValue;
     }
 
