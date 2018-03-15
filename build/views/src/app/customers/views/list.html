@@ -3,8 +3,7 @@
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
+        <th scope="col">Full name</th>
         <th scope="col">Birthday</th>
         <th scope="col">Gender</th>
         <th scope="col">Action</th>
@@ -12,11 +11,10 @@
     </thead>
     <tbody>
         <tr ng-repeat="customer in customers">
-            <td>{{ customer.customerID }}</td>
-            <td>{{ customer.name.first }}</td>
-            <td>{{ customer.name.last }}</td>
-            <td>{{ customer.birthday }}</td>
-            <td>{{ customer.gender }}</td>
+            <td>{{ customer.getCustomerID() }}</td>
+            <td>{{ customer.getName() }}</td>
+            <td>{{ customer.getBirthday() }}</td>
+            <td>{{ customer.getGender() }}</td>
             <td>
                 <button type="button" class="btn btn-primary" ui-sref="App.show_customer({customerId: customer.customerID})">
                     Show

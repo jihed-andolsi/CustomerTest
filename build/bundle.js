@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 98);
+/******/ 	return __webpack_require__(__webpack_require__.s = 99);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1080,17 +1080,17 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! ./common/index */ 16));
-__export(__webpack_require__(/*! ./params/index */ 69));
-__export(__webpack_require__(/*! ./path/index */ 70));
-__export(__webpack_require__(/*! ./resolve/index */ 71));
-__export(__webpack_require__(/*! ./state/index */ 72));
-__export(__webpack_require__(/*! ./transition/index */ 73));
-__export(__webpack_require__(/*! ./url/index */ 74));
-__export(__webpack_require__(/*! ./view/index */ 78));
+__export(__webpack_require__(/*! ./params/index */ 70));
+__export(__webpack_require__(/*! ./path/index */ 71));
+__export(__webpack_require__(/*! ./resolve/index */ 72));
+__export(__webpack_require__(/*! ./state/index */ 73));
+__export(__webpack_require__(/*! ./transition/index */ 74));
+__export(__webpack_require__(/*! ./url/index */ 75));
+__export(__webpack_require__(/*! ./view/index */ 79));
 __export(__webpack_require__(/*! ./globals */ 31));
 __export(__webpack_require__(/*! ./router */ 36));
-__export(__webpack_require__(/*! ./vanilla */ 75));
-__export(__webpack_require__(/*! ./interface */ 68));
+__export(__webpack_require__(/*! ./vanilla */ 76));
+__export(__webpack_require__(/*! ./interface */ 69));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -4775,21 +4775,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var interface_1 = __webpack_require__(/*! ./interface */ 9);
 var transition_1 = __webpack_require__(/*! ./transition */ 19);
 var hookRegistry_1 = __webpack_require__(/*! ./hookRegistry */ 26);
-var coreResolvables_1 = __webpack_require__(/*! ../hooks/coreResolvables */ 59);
-var redirectTo_1 = __webpack_require__(/*! ../hooks/redirectTo */ 63);
-var onEnterExitRetain_1 = __webpack_require__(/*! ../hooks/onEnterExitRetain */ 62);
-var resolve_1 = __webpack_require__(/*! ../hooks/resolve */ 64);
-var views_1 = __webpack_require__(/*! ../hooks/views */ 67);
-var updateGlobals_1 = __webpack_require__(/*! ../hooks/updateGlobals */ 65);
-var url_1 = __webpack_require__(/*! ../hooks/url */ 66);
+var coreResolvables_1 = __webpack_require__(/*! ../hooks/coreResolvables */ 60);
+var redirectTo_1 = __webpack_require__(/*! ../hooks/redirectTo */ 64);
+var onEnterExitRetain_1 = __webpack_require__(/*! ../hooks/onEnterExitRetain */ 63);
+var resolve_1 = __webpack_require__(/*! ../hooks/resolve */ 65);
+var views_1 = __webpack_require__(/*! ../hooks/views */ 68);
+var updateGlobals_1 = __webpack_require__(/*! ../hooks/updateGlobals */ 66);
+var url_1 = __webpack_require__(/*! ../hooks/url */ 67);
 var lazyLoad_1 = __webpack_require__(/*! ../hooks/lazyLoad */ 32);
 var transitionEventType_1 = __webpack_require__(/*! ./transitionEventType */ 43);
 var transitionHook_1 = __webpack_require__(/*! ./transitionHook */ 13);
 var predicates_1 = __webpack_require__(/*! ../common/predicates */ 1);
 var common_1 = __webpack_require__(/*! ../common/common */ 0);
 var hof_1 = __webpack_require__(/*! ../common/hof */ 2);
-var ignoredTransition_1 = __webpack_require__(/*! ../hooks/ignoredTransition */ 60);
-var invalidTransition_1 = __webpack_require__(/*! ../hooks/invalidTransition */ 61);
+var ignoredTransition_1 = __webpack_require__(/*! ../hooks/ignoredTransition */ 61);
+var invalidTransition_1 = __webpack_require__(/*! ../hooks/invalidTransition */ 62);
 /**
  * The default [[Transition]] options.
  *
@@ -5032,10 +5032,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var angular_1 = __webpack_require__(/*! ./angular */ 10);
 var core_1 = __webpack_require__(/*! @uirouter/core */ 4);
 var views_1 = __webpack_require__(/*! ./statebuilders/views */ 29);
-var templateFactory_1 = __webpack_require__(/*! ./templateFactory */ 86);
+var templateFactory_1 = __webpack_require__(/*! ./templateFactory */ 87);
 var stateProvider_1 = __webpack_require__(/*! ./stateProvider */ 56);
-var onEnterExitRetain_1 = __webpack_require__(/*! ./statebuilders/onEnterExitRetain */ 85);
-var locationServices_1 = __webpack_require__(/*! ./locationServices */ 83);
+var onEnterExitRetain_1 = __webpack_require__(/*! ./statebuilders/onEnterExitRetain */ 86);
+var locationServices_1 = __webpack_require__(/*! ./locationServices */ 84);
 var urlRouterProvider_1 = __webpack_require__(/*! ./urlRouterProvider */ 57);
 angular_1.ng.module("ui.router.angular1", []);
 var mod_init = angular_1.ng.module('ui.router.init', []);
@@ -5261,7 +5261,7 @@ exports.Ng1ViewConfig = Ng1ViewConfig;
   \****************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./angular */ 88);
+__webpack_require__(/*! ./angular */ 89);
 module.exports = angular;
 
 
@@ -9077,6 +9077,86 @@ exports.UrlRouterProvider = UrlRouterProvider;
 /***/ }),
 /* 58 */
 /* exports provided: default */
+/* exports used: default */
+/*!***************************************!*\
+  !*** ./src/app/customers/Customer.ts ***!
+  \***************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Customer{
+    constructor(e){
+        let $this = this;
+        $this.customerID = (typeof e != "undefined"  && e.hasOwnProperty('customerID')) ?  e.customerID : 0;
+        $this.name = {
+            "first": (typeof e != "undefined"  && e.hasOwnProperty('name')) ? e.name.first : "",
+            "last": (typeof e != "undefined" && e.hasOwnProperty('name')) ? e.name.last : "",
+        }
+        $this.birthday = (typeof e != "undefined" && e.hasOwnProperty('birthday')) ? e.birthday : "";
+        $this.gender = (typeof e != "undefined" && e.hasOwnProperty('gender')) ? e.gender : "";
+        $this.lastContact = (typeof e != "undefined" && e.hasOwnProperty('lastContact')) ? e.lastContact : "";
+        $this.customerLifetimeValue = (typeof e != "undefined" && e.hasOwnProperty('customerLifetimeValue')) ? e.customerLifetimeValue : 0;
+    }
+
+    getCustomerID(){
+        return this.customerID;
+    }
+
+    setCustomerID(id){
+        this.customerID = id;
+    }
+
+    getFirstName(){
+        return this.name.first;
+    }
+    setFirstName(firstname){
+        this.name.first = firstname;
+    }
+    getLastName(){
+        return this.name.last;
+    }
+    setLastName(lastname){
+        this.name.last = lastname;
+    }
+    getName(){
+        return `${this.getFirstName()} ${this.getLastName()}`;
+    }
+
+    getBirthday(){
+        return this.birthday;
+    }
+    setBirthday(birthday){
+        this.birthday = birthday;
+    }
+
+    getGender(){
+        return this.gender;
+    }
+    setGender(gender){
+        this.gender = gender;
+    }
+
+    getLastContact(){
+        return this.lastContact;
+    }
+    setLastContact(lastContact){
+        this.lastContact = lastContact;
+    }
+
+    getCustomerLifetimeValue(){
+        return this.customerLifetimeValue;
+    }
+
+    setCustomerLifetimeValue(customerLifetimeValue){
+        this.customerLifetimeValue = customerLifetimeValue;
+    }
+
+}
+/* harmony default export */ __webpack_exports__["a"] = (Customer);
+
+/***/ }),
+/* 59 */
+/* exports provided: default */
 /* all exports used */
 /*!*******************************!*\
   !*** ./src/app/app.module.ts ***!
@@ -9087,12 +9167,12 @@ exports.UrlRouterProvider = UrlRouterProvider;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(/*! angular */ 30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_ui_router__ = __webpack_require__(/*! angular-ui-router */ 81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_ui_router__ = __webpack_require__(/*! angular-ui-router */ 82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_ui_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_ui_router__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_mainService__ = __webpack_require__(/*! ./main/mainService */ 97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_mainService__ = __webpack_require__(/*! ./main/mainService */ 98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_mainService___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__main_mainService__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__customer_customerService__ = __webpack_require__(/*! ./customer/customerService */ 94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(/*! ./app.routes */ 89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__customers_customerService__ = __webpack_require__(/*! ./customers/customerService */ 96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(/*! ./app.routes */ 90);
 /**
  * Load angular app
  */
@@ -9107,12 +9187,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 const MODULE_NAME = 'app';
 __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module(MODULE_NAME, [__WEBPACK_IMPORTED_MODULE_1_angular_ui_router___default.a]).config(__WEBPACK_IMPORTED_MODULE_4__app_routes__["a" /* default */])
     .service('mainService', __WEBPACK_IMPORTED_MODULE_2__main_mainService___default.a)
-    .service('customerService', __WEBPACK_IMPORTED_MODULE_3__customer_customerService__["a" /* default */]);
+    .service('customerService', __WEBPACK_IMPORTED_MODULE_3__customers_customerService__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["default"] = (MODULE_NAME);
 
 /***/ }),
-/* 59 */
+/* 60 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************************!*\
@@ -9141,7 +9221,7 @@ exports.registerAddCoreResolvables = function (transitionService) {
 //# sourceMappingURL=coreResolvables.js.map
 
 /***/ }),
-/* 60 */
+/* 61 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
@@ -9183,7 +9263,7 @@ exports.registerIgnoredTransitionHook = function (transitionService) {
 //# sourceMappingURL=ignoredTransition.js.map
 
 /***/ }),
-/* 61 */
+/* 62 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
@@ -9213,7 +9293,7 @@ exports.registerInvalidTransitionHook = function (transitionService) {
 //# sourceMappingURL=invalidTransition.js.map
 
 /***/ }),
-/* 62 */
+/* 63 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************************************!*\
@@ -9281,7 +9361,7 @@ exports.registerOnEnterHook = function (transitionService) {
 //# sourceMappingURL=onEnterExitRetain.js.map
 
 /***/ }),
-/* 63 */
+/* 64 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
@@ -9329,7 +9409,7 @@ exports.registerRedirectToHook = function (transitionService) {
 //# sourceMappingURL=redirectTo.js.map
 
 /***/ }),
-/* 64 */
+/* 65 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
@@ -9383,7 +9463,7 @@ exports.registerLazyResolveState = function (transitionService) {
 //# sourceMappingURL=resolve.js.map
 
 /***/ }),
-/* 65 */
+/* 66 */
 /* no static exports found */
 /* all exports used */
 /*!*****************************************************!*\
@@ -9429,7 +9509,7 @@ exports.registerUpdateGlobalState = function (transitionService) {
 //# sourceMappingURL=updateGlobals.js.map
 
 /***/ }),
-/* 66 */
+/* 67 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
@@ -9465,7 +9545,7 @@ exports.registerUpdateUrl = function (transitionService) {
 //# sourceMappingURL=url.js.map
 
 /***/ }),
-/* 67 */
+/* 68 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************************!*\
@@ -9523,7 +9603,7 @@ exports.registerActivateViews = function (transitionService) {
 //# sourceMappingURL=views.js.map
 
 /***/ }),
-/* 68 */
+/* 69 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
@@ -9555,7 +9635,7 @@ exports.UIRouterPluginBase = UIRouterPluginBase;
 //# sourceMappingURL=interface.js.map
 
 /***/ }),
-/* 69 */
+/* 70 */
 /* no static exports found */
 /* all exports used */
 /*!**********************************************!*\
@@ -9576,7 +9656,7 @@ __export(__webpack_require__(/*! ./paramType */ 23));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 70 */
+/* 71 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************!*\
@@ -9596,7 +9676,7 @@ __export(__webpack_require__(/*! ./pathFactory */ 17));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 71 */
+/* 72 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
@@ -9617,7 +9697,7 @@ __export(__webpack_require__(/*! ./resolveContext */ 18));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 72 */
+/* 73 */
 /* no static exports found */
 /* all exports used */
 /*!*********************************************!*\
@@ -9641,7 +9721,7 @@ __export(__webpack_require__(/*! ./targetState */ 7));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 73 */
+/* 74 */
 /* no static exports found */
 /* all exports used */
 /*!**************************************************!*\
@@ -9680,7 +9760,7 @@ __export(__webpack_require__(/*! ./transitionService */ 27));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 74 */
+/* 75 */
 /* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
@@ -9702,7 +9782,7 @@ __export(__webpack_require__(/*! ./urlService */ 47));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 75 */
+/* 76 */
 /* no static exports found */
 /* all exports used */
 /*!*****************************************!*\
@@ -9721,11 +9801,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @module vanilla
  */
 /** */
-__export(__webpack_require__(/*! ./vanilla/index */ 76));
+__export(__webpack_require__(/*! ./vanilla/index */ 77));
 //# sourceMappingURL=vanilla.js.map
 
 /***/ }),
-/* 76 */
+/* 77 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
@@ -9748,11 +9828,11 @@ __export(__webpack_require__(/*! ./pushStateLocationService */ 53));
 __export(__webpack_require__(/*! ./memoryLocationConfig */ 51));
 __export(__webpack_require__(/*! ./browserLocationConfig */ 48));
 __export(__webpack_require__(/*! ./utils */ 14));
-__export(__webpack_require__(/*! ./plugins */ 77));
+__export(__webpack_require__(/*! ./plugins */ 78));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 77 */
+/* 78 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************************!*\
@@ -9792,7 +9872,7 @@ exports.memoryLocationPlugin = utils_1.locationPluginFactory("vanilla.memoryLoca
 //# sourceMappingURL=plugins.js.map
 
 /***/ }),
-/* 78 */
+/* 79 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************!*\
@@ -9810,7 +9890,7 @@ __export(__webpack_require__(/*! ./view */ 55));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 79 */
+/* 80 */
 /* no static exports found */
 /* all exports used */
 /*!***************************************************************!*\
@@ -10392,7 +10472,7 @@ angular_1.ng.module('ui.router.state')
 //# sourceMappingURL=stateDirectives.js.map
 
 /***/ }),
-/* 80 */
+/* 81 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************************************!*\
@@ -10693,7 +10773,7 @@ angular_1.ng.module('ui.router.state').directive('uiView', $ViewDirectiveFill);
 //# sourceMappingURL=viewDirective.js.map
 
 /***/ }),
-/* 81 */
+/* 82 */
 /* no static exports found */
 /* exports used: default */
 /*!******************************************!*\
@@ -10718,16 +10798,16 @@ __export(__webpack_require__(/*! ./services */ 28));
 __export(__webpack_require__(/*! ./statebuilders/views */ 29));
 __export(__webpack_require__(/*! ./stateProvider */ 56));
 __export(__webpack_require__(/*! ./urlRouterProvider */ 57));
-__webpack_require__(/*! ./injectables */ 82);
-__webpack_require__(/*! ./directives/stateDirectives */ 79);
-__webpack_require__(/*! ./stateFilters */ 84);
-__webpack_require__(/*! ./directives/viewDirective */ 80);
-__webpack_require__(/*! ./viewScroll */ 87);
+__webpack_require__(/*! ./injectables */ 83);
+__webpack_require__(/*! ./directives/stateDirectives */ 80);
+__webpack_require__(/*! ./stateFilters */ 85);
+__webpack_require__(/*! ./directives/viewDirective */ 81);
+__webpack_require__(/*! ./viewScroll */ 88);
 exports.default = "ui.router";
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 82 */
+/* 83 */
 /* no static exports found */
 /* all exports used */
 /*!************************************************!*\
@@ -11106,7 +11186,7 @@ var $urlMatcherFactoryProvider;
 //# sourceMappingURL=injectables.js.map
 
 /***/ }),
-/* 83 */
+/* 84 */
 /* no static exports found */
 /* all exports used */
 /*!*****************************************************!*\
@@ -11192,7 +11272,7 @@ exports.Ng1LocationServices = Ng1LocationServices;
 //# sourceMappingURL=locationServices.js.map
 
 /***/ }),
-/* 84 */
+/* 85 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************************!*\
@@ -11249,7 +11329,7 @@ angular_1.ng.module('ui.router.state')
 //# sourceMappingURL=stateFilters.js.map
 
 /***/ }),
-/* 85 */
+/* 86 */
 /* no static exports found */
 /* all exports used */
 /*!********************************************************************!*\
@@ -11285,7 +11365,7 @@ exports.getStateHookBuilder = function (hookName) {
 //# sourceMappingURL=onEnterExitRetain.js.map
 
 /***/ }),
-/* 86 */
+/* 87 */
 /* no static exports found */
 /* all exports used */
 /*!****************************************************!*\
@@ -11490,7 +11570,7 @@ var scopeBindings = function (bindingsObj) { return Object.keys(bindingsObj || {
 //# sourceMappingURL=templateFactory.js.map
 
 /***/ }),
-/* 87 */
+/* 88 */
 /* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
@@ -11524,7 +11604,7 @@ angular_1.ng.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProv
 //# sourceMappingURL=viewScroll.js.map
 
 /***/ }),
-/* 88 */
+/* 89 */
 /* no static exports found */
 /* all exports used */
 /*!******************************!*\
@@ -45893,7 +45973,7 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-/* 89 */
+/* 90 */
 /* exports provided: default */
 /* exports used: default */
 /*!*******************************!*\
@@ -45902,12 +45982,12 @@ $provide.value("$locale", {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_mainController__ = __webpack_require__(/*! ./main/mainController */ 96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__customer_customerListController__ = __webpack_require__(/*! ./customer/customerListController */ 92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customer_customerEditController__ = __webpack_require__(/*! ./customer/customerEditController */ 91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__customer_customerAddController__ = __webpack_require__(/*! ./customer/customerAddController */ 90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__customer_customerShowController__ = __webpack_require__(/*! ./customer/customerShowController */ 95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__customer_customerNotFoundController__ = __webpack_require__(/*! ./customer/customerNotFoundController */ 93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_MainController__ = __webpack_require__(/*! ./main/MainController */ 97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__customers_CustomerListController__ = __webpack_require__(/*! ./customers/CustomerListController */ 93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customers_CustomerEditController__ = __webpack_require__(/*! ./customers/CustomerEditController */ 92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__customers_CustomerAddController__ = __webpack_require__(/*! ./customers/CustomerAddController */ 91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__customers_CustomerShowController__ = __webpack_require__(/*! ./customers/CustomerShowController */ 95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__customers_CustomerNotFoundController__ = __webpack_require__(/*! ./customers/CustomerNotFoundController */ 94);
 /**
  * Configure routes
  */
@@ -45927,7 +46007,7 @@ class config {
             // layout of application
             .state('App', {
                 templateUrl: 'views/src/app/main/layout.html',
-                controller: __WEBPACK_IMPORTED_MODULE_0__main_mainController__["a" /* default */],
+                controller: __WEBPACK_IMPORTED_MODULE_0__main_MainController__["a" /* default */],
                 resolve: {
 
                 },
@@ -45937,8 +46017,8 @@ class config {
                 url: "/",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/list.html',
-                        controller: __WEBPACK_IMPORTED_MODULE_1__customer_customerListController__["a" /* default */],
+                        templateUrl: 'views/src/app/customers/views/list.html',
+                        controller: __WEBPACK_IMPORTED_MODULE_1__customers_CustomerListController__["a" /* default */],
                     },
                 },
                 resolve: {
@@ -45953,8 +46033,8 @@ class config {
                 url: "/customer/edit/{customerId}",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/edit.html',
-                        controller: __WEBPACK_IMPORTED_MODULE_2__customer_customerEditController__["a" /* default */],
+                        templateUrl: 'views/src/app/customers/views/edit.html',
+                        controller: __WEBPACK_IMPORTED_MODULE_2__customers_CustomerEditController__["a" /* default */],
                     },
                 },
                 resolve: {
@@ -45969,8 +46049,8 @@ class config {
                 url: "/customer/show/{customerId}",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/show.html',
-                        controller: __WEBPACK_IMPORTED_MODULE_4__customer_customerShowController__["a" /* default */],
+                        templateUrl: 'views/src/app/customers/views/show.html',
+                        controller: __WEBPACK_IMPORTED_MODULE_4__customers_CustomerShowController__["a" /* default */],
                     },
                 },
                 resolve: {
@@ -45984,8 +46064,8 @@ class config {
                 url: "/customer",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/add.html',
-                        controller: __WEBPACK_IMPORTED_MODULE_3__customer_customerAddController__["a" /* default */],
+                        templateUrl: 'views/src/app/customers/views/add.html',
+                        controller: __WEBPACK_IMPORTED_MODULE_3__customers_CustomerAddController__["a" /* default */],
                     },
                 },
                 resolve: {
@@ -45997,8 +46077,8 @@ class config {
                 url: "/customer/notFound",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/notFound.html',
-                        controller: __WEBPACK_IMPORTED_MODULE_5__customer_customerNotFoundController__["a" /* default */],
+                        templateUrl: 'views/src/app/customers/views/notFound.html',
+                        controller: __WEBPACK_IMPORTED_MODULE_5__customers_CustomerNotFoundController__["a" /* default */],
                     },
                 },
                 resolve: {
@@ -46012,31 +46092,25 @@ config.$inject = ['$stateProvider', '$urlRouterProvider']; // inject services to
 /* harmony default export */ __webpack_exports__["a"] = (config);
 
 /***/ }),
-/* 90 */
+/* 91 */
 /* exports provided: default */
 /* exports used: default */
-/*!***************************************************!*\
-  !*** ./src/app/customer/customerAddController.ts ***!
-  \***************************************************/
+/*!****************************************************!*\
+  !*** ./src/app/customers/CustomerAddController.ts ***!
+  \****************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Customer__ = __webpack_require__(/*! ./Customer */ 58);
 /**
  * add customer to the list
  */
-class customerAddController {
+
+
+class CustomerAddController {
     constructor($scope, customerService, $state) {
         //initilize customer object
-        $scope.customer =  {
-            "name": {
-                "first": "",
-                "last": ""
-            },
-            "birthday": "",
-            "gender": "",
-            "lastContact": "",
-            "customerLifetimeValue": 0
-        };
+        $scope.customer = new __WEBPACK_IMPORTED_MODULE_0__Customer__["a" /* default */]();
         //action form
         $scope.submitForm = ()=>{
             //check if form is valid
@@ -46045,37 +46119,37 @@ class customerAddController {
                 let newCusto = customerService.add($scope.customer);
                 if(newCusto){
                     // if added redirect to show page
-                    $state.go('App.show_customer', {customerId: newCusto.customerID});
+                    $state.go('App.show_customer', {customerId: newCusto.getCustomerID()});
                 }
             }
         }
     }
 }
-customerAddController.$inject = ['$scope', 'customerService', '$state']; //inject service in controller
-/* harmony default export */ __webpack_exports__["a"] = (customerAddController);
+CustomerAddController.$inject = ['$scope', 'customerService', '$state']; //inject service in controller
+/* harmony default export */ __webpack_exports__["a"] = (CustomerAddController);
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /* exports provided: default */
 /* exports used: default */
-/*!****************************************************!*\
-  !*** ./src/app/customer/customerEditController.ts ***!
-  \****************************************************/
+/*!*****************************************************!*\
+  !*** ./src/app/customers/CustomerEditController.ts ***!
+  \*****************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
  * fetch and edit customer by id
  */
-class customerEditController {
+class CustomerEditController {
     constructor($scope, $stateParams, customer, customerService, $state) {
         // check if customer is found
         if(!customer){
             $state.go('App.error');
         }
         $scope.customerId = $stateParams.customerId; // get id of customer from params
-        $scope.customer = customer; // get customer by id service resolve
+        $scope.customer = customer; // get customer by id from service resolve
         // submit form action
         $scope.submitForm = ()=>{
             // check if form is valid
@@ -46091,67 +46165,105 @@ class customerEditController {
 
     }
 }
-customerEditController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject service in controller
-/* harmony default export */ __webpack_exports__["a"] = (customerEditController);
-
-
-/***/ }),
-/* 92 */
-/* exports provided: default */
-/* exports used: default */
-/*!****************************************************!*\
-  !*** ./src/app/customer/customerListController.ts ***!
-  \****************************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/**
- * shows list of customers
- */
-class customerListController {
-    constructor($scope, customers) {
-        $scope.customers = customers; // get list of customer using service resolve
-    }
-}
-customerListController.$inject = ['$scope', 'customers'];  //inject service in controller
-/* harmony default export */ __webpack_exports__["a"] = (customerListController);
+CustomerEditController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject service in controller
+/* harmony default export */ __webpack_exports__["a"] = (CustomerEditController);
 
 
 /***/ }),
 /* 93 */
 /* exports provided: default */
 /* exports used: default */
-/*!********************************************************!*\
-  !*** ./src/app/customer/customerNotFoundController.ts ***!
-  \********************************************************/
+/*!*****************************************************!*\
+  !*** ./src/app/customers/CustomerListController.ts ***!
+  \*****************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
- * shows not found if customer not found
+ * shows list of customers
  */
-class customerNotFoundController {
-    constructor() {
-
+class CustomerListController {
+    constructor($scope, customers) {
+        $scope.customers = customers; // get list of customer using service resolve
     }
 }
-/* harmony default export */ __webpack_exports__["a"] = (customerNotFoundController);
+CustomerListController.$inject = ['$scope', 'customers'];  //inject service in controller
+/* harmony default export */ __webpack_exports__["a"] = (CustomerListController);
 
 
 /***/ }),
 /* 94 */
 /* exports provided: default */
 /* exports used: default */
-/*!*********************************************!*\
-  !*** ./src/app/customer/customerService.ts ***!
-  \*********************************************/
+/*!*********************************************************!*\
+  !*** ./src/app/customers/CustomerNotFoundController.ts ***!
+  \*********************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /**
+ * shows not found if customer not found
+ */
+class CustomerNotFoundController {
+    constructor() {
+
+    }
+}
+/* harmony default export */ __webpack_exports__["a"] = (CustomerNotFoundController);
+
+
+/***/ }),
+/* 95 */
+/* exports provided: default */
+/* exports used: default */
+/*!*****************************************************!*\
+  !*** ./src/app/customers/CustomerShowController.ts ***!
+  \*****************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * show customer detail
+ */
+class CustomerController {
+    constructor($scope, $stateParams, customer, customerService, $state) {
+        if(!customer){
+            $state.go('App.error');
+        }
+        $scope.customerId = $stateParams.customerId; //get customer id from params
+        $scope.customer = customer; // get customer object by id using service
+        // delete action
+        $scope.del = () => {
+            // delete customer from array
+            let del = customerService.del($stateParams.customerId);
+            if(del){
+                //if deleted redirect to page list customer
+                $state.go('App.customer_list');
+            }
+        }
+    }
+}
+CustomerController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject services to controller
+/* harmony default export */ __webpack_exports__["a"] = (CustomerController);
+
+
+/***/ }),
+/* 96 */
+/* exports provided: default */
+/* exports used: default */
+/*!**********************************************!*\
+  !*** ./src/app/customers/customerService.ts ***!
+  \**********************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Customer__ = __webpack_require__(/*! ./Customer */ 58);
+/**
  * service customer to fetch some api, here we have localy stored data
  */
-class customerService{
+
+
+class CustomerService{
     constructor(){
         // data json
         this.setData([
@@ -46214,7 +46326,10 @@ class customerService{
     }
 
     setData(data){
-        this.data = data;
+        this.data = [];
+        data.map(e=>{
+            this.data.push(new __WEBPACK_IMPORTED_MODULE_0__Customer__["a" /* default */](e));
+        })
     }
     // get full list of customers, here if we have an API we should use pagination
     getList(){
@@ -46225,7 +46340,7 @@ class customerService{
     getById(id){
         let list = this.getList();
         let [custo]=  list.filter(customer =>{
-            if(customer.customerID == id){
+            if(customer.getCustomerID() == id){
                 return customer;
             }
         });
@@ -46238,9 +46353,9 @@ class customerService{
         //let custo = this.getById(customerID);
         //custo = newCustomerValue;
         this.data.filter((customer, k) =>{
-            if(customer.customerID == customerID){
+            if(customer.getCustomerID() == customerID){
                 this.data[k] = newCustomerValue;
-                return customer;
+                return new __WEBPACK_IMPORTED_MODULE_0__Customer__["a" /* default */](customer);
             }
         });
 
@@ -46251,9 +46366,9 @@ class customerService{
     // add customer to the list
     add(newCustomerValue){
         let list = this.getList();
-        let counter = Math.max(...list.map(e=>{return e.customerID})) + 1; // get new id to setup new customer
-        //newCustomerValue.customerID = counter; //set the new id to the new customer
-        newCustomerValue = Object.assign({customerID: counter}, newCustomerValue);
+        let counter = Math.max(...list.map(e=>{return e.getCustomerID()})) + 1; // get new id to setup new customer
+        newCustomerValue.setCustomerID(counter);
+        //newCustomerValue = Object.assign({customerID: }, newCustomerValue);
 
         this.data.push(newCustomerValue); // push customer to the list
         return newCustomerValue;
@@ -46263,7 +46378,7 @@ class customerService{
     del(customerID){
         // filter list and get new list without customer to delete
         this.data = this.getList().filter(customer =>{
-            if(customer.customerID != customerID){
+            if(customer.getCustomerID() != customerID){
                 return customer;
             }
         });
@@ -46272,49 +46387,14 @@ class customerService{
     }
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (customerService);
+/* harmony default export */ __webpack_exports__["a"] = (CustomerService);
 
 /***/ }),
-/* 95 */
-/* exports provided: default */
-/* exports used: default */
-/*!****************************************************!*\
-  !*** ./src/app/customer/customerShowController.ts ***!
-  \****************************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/**
- * show customer detail
- */
-class customerController {
-    constructor($scope, $stateParams, customer, customerService, $state) {
-        if(!customer){
-            $state.go('App.error');
-        }
-        $scope.customerId = $stateParams.customerId; //get customer id from params
-        $scope.customer = customer; // get customer object by id using service
-        // delete action
-        $scope.del = () => {
-            // delete customer from array
-            let del = customerService.del($stateParams.customerId);
-            if(del){
-                //if deleted redirect to page list customer
-                $state.go('App.customer_list');
-            }
-        }
-    }
-}
-customerController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject services to controller
-/* harmony default export */ __webpack_exports__["a"] = (customerController);
-
-
-/***/ }),
-/* 96 */
+/* 97 */
 /* exports provided: default */
 /* exports used: default */
 /*!****************************************!*\
-  !*** ./src/app/main/mainController.ts ***!
+  !*** ./src/app/main/MainController.ts ***!
   \****************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -46322,17 +46402,17 @@ customerController.$inject = ['$scope', '$stateParams', 'customer', 'customerSer
 /**
  * Main controller of application
  */
-class mainController {
+class MainController {
     constructor() {
 
     }
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (mainController);
+/* harmony default export */ __webpack_exports__["a"] = (MainController);
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /* no static exports found */
 /* exports used: default */
 /*!*************************************!*\
@@ -46343,7 +46423,7 @@ class mainController {
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /* no static exports found */
 /* all exports used */
 /*!*************************************!*\
@@ -46351,7 +46431,7 @@ class mainController {
   \*************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/app/app.module.ts */58);
+module.exports = __webpack_require__(/*! ./src/app/app.module.ts */59);
 
 
 /***/ })

@@ -1,4 +1,5 @@
 import CustomerService from './../src/app/customers/CustomerService.ts';
+import Customer from './../src/app/customers/Customer.ts';
 let assert = require('assert');
 describe('Customer service', () => {
     let service;
@@ -22,7 +23,7 @@ describe('Customer service', () => {
 
     describe('add customer', () => {
         it('should add customer', () => {
-            service.add({
+            service.add(new Customer({
                 "name": {
                     "first": "Peter 2",
                     "last": "Smith 2"
@@ -31,7 +32,7 @@ describe('Customer service', () => {
                 "gender": "m",
                 "lastContact": "2017-06-01T23:28:56.782Z",
                 "customerLifetimeValue": 191.12
-            })
+            }))
             let expected = [
                 {
                     "customerID": 1,
@@ -63,7 +64,7 @@ describe('Customer service', () => {
     describe('edit customer', () => {
         it('should edit customer', () => {
             let idToEdit = 1;
-            let expected = {
+            let expected = new Customer({
                 "customerID": idToEdit,
                 "name": {
                     "first": "Peter 3",
@@ -73,7 +74,7 @@ describe('Customer service', () => {
                 "gender": "m",
                 "lastContact": "2017-06-01T23:28:56.782Z",
                 "customerLifetimeValue": 191.12
-            }
+            })
             let edit = service.edit(idToEdit, expected);
             assert.equal(edit, true);
             let result = service.getById(idToEdit);
