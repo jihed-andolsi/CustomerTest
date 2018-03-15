@@ -2,6 +2,7 @@
  * show customer detail
  */
 class CustomerController {
+    static $inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject services to controller
     constructor($scope, $stateParams, customer, customerService, $state) {
         if(!customer){
             $state.go('App.error');
@@ -19,5 +20,5 @@ class CustomerController {
         }
     }
 }
-CustomerController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject services to controller
+
 export default CustomerController;

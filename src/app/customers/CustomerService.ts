@@ -4,6 +4,7 @@
 
 import Customer from './Customer';
 class CustomerService{
+    private data;
     constructor(){
         // data json
         this.setData([

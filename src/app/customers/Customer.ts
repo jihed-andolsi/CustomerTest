@@ -1,4 +1,11 @@
 class Customer{
+    private customerID;
+    private name;
+    private birthday;
+    private gender;
+    private lastContact;
+    private customerLifetimeValue;
+
     constructor(e){
         let $this = this;
         $this.customerID = (typeof e != "undefined"  && e.hasOwnProperty('customerID')) ?  e.customerID : 0;

@@ -4,9 +4,10 @@
 import Customer from './Customer';
 
 class CustomerAddController {
+    static $inject = ['$scope', 'customerService', '$state'];//inject service in controller
     constructor($scope, customerService, $state) {
         //initilize customer object
-        $scope.customer = new Customer();
+        $scope.customer = new Customer({});
         //action form
         $scope.submitForm = ()=>{
             //check if form is valid
@@ -21,5 +22,5 @@ class CustomerAddController {
         }
     }
 }
-CustomerAddController.$inject = ['$scope', 'customerService', '$state']; //inject service in controller
+
 export default CustomerAddController;

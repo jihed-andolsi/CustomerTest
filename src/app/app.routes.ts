@@ -11,6 +11,7 @@ import CustomerShowController from "./customers/CustomerShowController";
 import CustomerNotFoundController from "./customers/CustomerNotFoundController";
 
 class config {
+    static  $inject = ['$stateProvider', '$urlRouterProvider']; // inject services to config class
     constructor($stateProvider, $urlRouterProvider){
         $urlRouterProvider.otherwise("/"); // redirect to / if route not found
         $stateProvider
@@ -97,6 +98,4 @@ class config {
             })
     }
 }
-
-config.$inject = ['$stateProvider', '$urlRouterProvider']; // inject services to config class
 export default config;
