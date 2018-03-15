@@ -1,10 +1,10 @@
 /**
  * Main controller of application
  */
-class mainController {
+class MainController {
     constructor() {
 
     }
 }
 
-export default mainController;
+export default MainController;
