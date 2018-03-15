@@ -1,7 +1,8 @@
+import {CustomerEntity} from './Customer';
 /**
  * add customer to the list
  */
-import {CustomerEntity} from './Customer';
+
 
 class CustomerAddController {
     static $inject = ['$scope', 'customerService', '$state'];//inject service in controller

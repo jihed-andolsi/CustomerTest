@@ -1,7 +1,7 @@
-import CustomerService from './../src/app/customers/CustomerService.ts';
-import Customer from './../src/app/customers/Customer.ts';
-let assert = require('assert');
-describe('Customer service', () => {
+import CustomerService from "./../src/app/customers/CustomerService.ts";
+import Customer from "./../src/app/customers/Customer.ts";
+let assert = require("assert");
+describe("Customer service", () => {
     let service;
     beforeEach(() => {
         service = new CustomerService();
@@ -21,8 +21,8 @@ describe('Customer service', () => {
     });
 
 
-    describe('add customer', () => {
-        it('should add customer', () => {
+    describe("add customer", () => {
+        it("should add customer", () => {
             service.add(new Customer({
                 "name": {
                     "first": "Peter 2",
@@ -61,8 +61,8 @@ describe('Customer service', () => {
     });
 
 
-    describe('edit customer', () => {
-        it('should edit customer', () => {
+    describe("edit customer", () => {
+        it("should edit customer", () => {
             let idToEdit = 1;
             let expected = new Customer({
                 "customerID": idToEdit,
@@ -84,8 +84,8 @@ describe('Customer service', () => {
 
 
 
-    describe('delete customer', () => {
-        it('should delete customer', () => {
+    describe("delete customer", () => {
+        it("should delete customer", () => {
             let idToDelete = 1;
             let del = service.del(idToDelete);
             assert.equal(del, true);

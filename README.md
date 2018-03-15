@@ -36,10 +36,3 @@ Only basic functionalities was tested, to run tests please use:
 ```javascript
 npm run test
 ```
-
-## Built With
-[Angular](https://angularjs.org/)
-
-[Bootstrap 4](https://getbootstrap.com/)
-
-[Mocha](https://mochajs.org/)
