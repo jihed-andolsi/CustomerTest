@@ -1,7 +1,7 @@
 /**
  * add customer to the list
  */
-class customerAddController {
+class CustomerAddController {
     constructor($scope, customerService, $state) {
         //initilize customer object
         $scope.customer =  {
@@ -28,5 +28,5 @@ class customerAddController {
         }
     }
 }
-customerAddController.$inject = ['$scope', 'customerService', '$state']; //inject service in controller
-export default customerAddController;
+CustomerAddController.$inject = ['$scope', 'customerService', '$state']; //inject service in controller
+export default CustomerAddController;

@@ -3,12 +3,12 @@
  */
 
 // load needed controllers
-import mainCrtl from './main/mainController';
-import customerListController from './customer/customerListController';
-import customerEditController from "./customer/customerEditController";
-import customerAddController from "./customer/customerAddController";
-import customerShowController from "./customer/customerShowController";
-import customerNotFoundController from "./customer/customerNotFoundController";
+import MainCrtl from './main/MainController';
+import CustomerListController from './customers/CustomerListController';
+import CustomerEditController from "./customers/CustomerEditController";
+import CustomerAddController from "./customers/CustomerAddController";
+import CustomerShowController from "./customers/CustomerShowController";
+import CustomerNotFoundController from "./customers/CustomerNotFoundController";
 
 class config {
     constructor($stateProvider, $urlRouterProvider){
@@ -17,7 +17,7 @@ class config {
             // layout of application
             .state('App', {
                 templateUrl: 'views/src/app/main/layout.html',
-                controller: mainCrtl,
+                controller: MainCrtl,
                 resolve: {
 
                 },
@@ -27,8 +27,8 @@ class config {
                 url: "/",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/list.html',
-                        controller: customerListController,
+                        templateUrl: 'views/src/app/customers/views/list.html',
+                        controller: CustomerListController,
                     },
                 },
                 resolve: {
@@ -43,8 +43,8 @@ class config {
                 url: "/customer/edit/{customerId}",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/edit.html',
-                        controller: customerEditController,
+                        templateUrl: 'views/src/app/customers/views/edit.html',
+                        controller: CustomerEditController,
                     },
                 },
                 resolve: {
@@ -59,8 +59,8 @@ class config {
                 url: "/customer/show/{customerId}",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/show.html',
-                        controller: customerShowController,
+                        templateUrl: 'views/src/app/customers/views/show.html',
+                        controller: CustomerShowController,
                     },
                 },
                 resolve: {
@@ -74,8 +74,8 @@ class config {
                 url: "/customer",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/add.html',
-                        controller: customerAddController,
+                        templateUrl: 'views/src/app/customers/views/add.html',
+                        controller: CustomerAddController,
                     },
                 },
                 resolve: {
@@ -87,8 +87,8 @@ class config {
                 url: "/customer/notFound",
                 views: {
                     'content': {
-                        templateUrl: 'views/src/app/customer/views/notFound.html',
-                        controller: customerNotFoundController,
+                        templateUrl: 'views/src/app/customers/views/notFound.html',
+                        controller: CustomerNotFoundController,
                     },
                 },
                 resolve: {

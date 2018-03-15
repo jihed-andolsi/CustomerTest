@@ -1,7 +1,7 @@
 /**
  * service customer to fetch some api, here we have localy stored data
  */
-class customerService{
+class CustomerService{
     constructor(){
         // data json
         this.setData([
@@ -122,4 +122,4 @@ class customerService{
     }
 }
 
-export default customerService;
+export default CustomerService;

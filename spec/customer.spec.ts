@@ -1,5 +1,4 @@
-import 'babel-polyfill';
-import CustomerService from './customerService.ts';
+import CustomerService from './../src/app/customers/CustomerService.ts';
 let assert = require('assert');
 describe('Customer service', () => {
     let service;

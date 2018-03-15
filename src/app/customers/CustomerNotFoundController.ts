@@ -1,9 +1,9 @@
 /**
  * shows not found if customer not found
  */
-class customerNotFoundController {
+class CustomerNotFoundController {
     constructor() {
 
     }
 }
-export default customerNotFoundController;
+export default CustomerNotFoundController;

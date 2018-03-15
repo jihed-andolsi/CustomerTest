@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "test": "mocha -r ts-node/register spec/**/*.spec.ts",
     "dev": "webpack-dev-server --port 7500",
     "build": "webpack"
   },

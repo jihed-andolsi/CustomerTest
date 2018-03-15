@@ -1,7 +1,7 @@
 /**
  * fetch and edit customer by id
  */
-class customerEditController {
+class CustomerEditController {
     constructor($scope, $stateParams, customer, customerService, $state) {
         // check if customer is found
         if(!customer){
@@ -24,5 +24,5 @@ class customerEditController {
 
     }
 }
-customerEditController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject service in controller
-export default customerEditController;
+CustomerEditController.$inject = ['$scope', '$stateParams', 'customer', 'customerService', '$state']; //inject service in controller
+export default CustomerEditController;
