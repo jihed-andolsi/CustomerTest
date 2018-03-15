@@ -1,19 +1,12 @@
 /**
  * add customer to the list
  */
+import Customer from './Customer';
+
 class CustomerAddController {
     constructor($scope, customerService, $state) {
         //initilize customer object
-        $scope.customer =  {
-            "name": {
-                "first": "",
-                "last": ""
-            },
-            "birthday": "",
-            "gender": "",
-            "lastContact": "",
-            "customerLifetimeValue": 0
-        };
+        $scope.customer = new Customer();
         //action form
         $scope.submitForm = ()=>{
             //check if form is valid
