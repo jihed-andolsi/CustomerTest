@@ -80,7 +80,7 @@ class CustomerService{
     getById(id){
         let list = this.getList();
         let [custo]=  list.filter(customer =>{
-            if(customer.customerID == id){
+            if(customer.getCustomerID() == id){
                 return customer;
             }
         });
@@ -93,7 +93,7 @@ class CustomerService{
         //let custo = this.getById(customerID);
         //custo = newCustomerValue;
         this.data.filter((customer, k) =>{
-            if(customer.customerID == customerID){
+            if(customer.getCustomerID() == customerID){
                 this.data[k] = newCustomerValue;
                 return new Customer(customer);
             }
@@ -106,9 +106,9 @@ class CustomerService{
     // add customer to the list
     add(newCustomerValue){
         let list = this.getList();
-        let counter = Math.max(...list.map(e=>{return e.customerID})) + 1; // get new id to setup new customer
-        //newCustomerValue.customerID = counter; //set the new id to the new customer
-        newCustomerValue = Object.assign({customerID: counter}, newCustomerValue);
+        let counter = Math.max(...list.map(e=>{return e.getCustomerID()})) + 1; // get new id to setup new customer
+        newCustomerValue.setCustomerID(counter);
+        //newCustomerValue = Object.assign({customerID: }, newCustomerValue);
 
         this.data.push(newCustomerValue); // push customer to the list
         return newCustomerValue;
@@ -118,7 +118,7 @@ class CustomerService{
     del(customerID){
         // filter list and get new list without customer to delete
         this.data = this.getList().filter(customer =>{
-            if(customer.customerID != customerID){
+            if(customer.getCustomerID() != customerID){
                 return customer;
             }
         });

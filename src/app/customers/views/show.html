@@ -1,10 +1,10 @@
-<h1>Edit customer {{ customerId }}</h1>
+<h1>Edit customer {{ customer.getCustomerID() }}</h1>
 
-<p><h4>{{ customer.name.first }} {{ customer.name.last }}</h4></p>
-<p><span>Birthday:</span> {{ customer.birthday }}</p>
-<p><span>Gender:</span> {{ customer.gender }}</p>
+<p><h4>{{ customer.getName() }}</h4></p>
+<p><span>Birthday:</span> {{ customer.getBirthday() }}</p>
+<p><span>Gender:</span> {{ customer.getGender() }}</p>
 
-<button type="button" class="btn btn-primary" ui-sref="App.edit_cutomer({customerId: customerId})">
+<button type="button" class="btn btn-primary" ui-sref="App.edit_cutomer({customerId: customer.getCustomerID()})">
     edit
 </button>
 <button type="button" class="btn btn-danger" ng-click="del()">

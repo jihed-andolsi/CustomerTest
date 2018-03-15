@@ -11,7 +11,7 @@
     </thead>
     <tbody>
         <tr ng-repeat="customer in customers">
-            <td>{{ customer.customerID }}</td>
+            <td>{{ customer.getCustomerID() }}</td>
             <td>{{ customer.getName() }}</td>
             <td>{{ customer.getBirthday() }}</td>
             <td>{{ customer.getGender() }}</td>

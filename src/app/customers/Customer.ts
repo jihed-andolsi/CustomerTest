@@ -1,7 +1,7 @@
 class Customer{
     constructor(e){
         let $this = this;
-        (typeof e != "undefined"  && e.hasOwnProperty('customerID')) ? $this.customerID = e.customerID : false;
+        $this.customerID = (typeof e != "undefined"  && e.hasOwnProperty('customerID')) ?  e.customerID : 0;
         $this.name = {
             "first": (typeof e != "undefined"  && e.hasOwnProperty('name')) ? e.name.first : "",
             "last": (typeof e != "undefined" && e.hasOwnProperty('name')) ? e.name.last : "",
@@ -10,6 +10,14 @@ class Customer{
         $this.gender = (typeof e != "undefined" && e.hasOwnProperty('gender')) ? e.gender : "";
         $this.lastContact = (typeof e != "undefined" && e.hasOwnProperty('lastContact')) ? e.lastContact : "";
         $this.customerLifetimeValue = (typeof e != "undefined" && e.hasOwnProperty('customerLifetimeValue')) ? e.customerLifetimeValue : 0;
+    }
+
+    getCustomerID(){
+        return this.customerID;
+    }
+
+    setCustomerID(id){
+        this.customerID = id;
     }
 
     getFirstName(){

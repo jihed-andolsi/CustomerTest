@@ -8,7 +8,7 @@ class CustomerEditController {
             $state.go('App.error');
         }
         $scope.customerId = $stateParams.customerId; // get id of customer from params
-        $scope.customer = customer; // get customer by id service resolve
+        $scope.customer = customer; // get customer by id from service resolve
         // submit form action
         $scope.submitForm = ()=>{
             // check if form is valid

@@ -15,7 +15,7 @@ class CustomerAddController {
                 let newCusto = customerService.add($scope.customer);
                 if(newCusto){
                     // if added redirect to show page
-                    $state.go('App.show_customer', {customerId: newCusto.customerID});
+                    $state.go('App.show_customer', {customerId: newCusto.getCustomerID()});
                 }
             }
         }
