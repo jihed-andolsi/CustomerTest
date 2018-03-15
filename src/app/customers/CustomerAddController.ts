@@ -1,13 +1,13 @@
 /**
  * add customer to the list
  */
-import Customer from './Customer';
+import {CustomerEntity} from './Customer';
 
 class CustomerAddController {
     static $inject = ['$scope', 'customerService', '$state'];//inject service in controller
     constructor($scope, customerService, $state) {
         //initilize customer object
-        $scope.customer = new Customer({});
+        $scope.customer = new CustomerEntity(null);
         //action form
         $scope.submitForm = ()=>{
             //check if form is valid

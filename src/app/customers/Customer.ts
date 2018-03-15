@@ -1,4 +1,16 @@
-class Customer{
+type Customer = {
+    "customerID": 0,
+    "name": {
+        "first": "",
+        "last": ""
+    },
+    "birthday": "",
+    "gender": "",
+    "lastContact": "",
+    "customerLifetimeValue": 0
+}
+
+class CustomerEntity{
     private customerID;
     private name;
     private birthday;
@@ -6,37 +18,40 @@ class Customer{
     private lastContact;
     private customerLifetimeValue;
 
-    constructor(e){
+    constructor(e: Customer | null){
         let $this = this;
-        $this.customerID = (typeof e != "undefined"  && e.hasOwnProperty('customerID')) ?  e.customerID : 0;
-        $this.name = {
-            "first": (typeof e != "undefined"  && e.hasOwnProperty('name')) ? e.name.first : "",
-            "last": (typeof e != "undefined" && e.hasOwnProperty('name')) ? e.name.last : "",
+        if(e){
+            $this.customerID = (typeof e != "undefined"  && e.hasOwnProperty('customerID')) ?  e.customerID : 0;
+            $this.name = {
+                "first": (typeof e != "undefined"  && e.hasOwnProperty('name')) ? e.name.first : "",
+                "last": (typeof e != "undefined" && e.hasOwnProperty('name')) ? e.name.last : "",
+            }
+            $this.birthday = (typeof e != "undefined" && e.hasOwnProperty('birthday')) ? e.birthday : "";
+            $this.gender = (typeof e != "undefined" && e.hasOwnProperty('gender')) ? e.gender : "";
+            $this.lastContact = (typeof e != "undefined" && e.hasOwnProperty('lastContact')) ? e.lastContact : "";
+            $this.customerLifetimeValue = (typeof e != "undefined" && e.hasOwnProperty('customerLifetimeValue')) ? e.customerLifetimeValue : 0;
         }
-        $this.birthday = (typeof e != "undefined" && e.hasOwnProperty('birthday')) ? e.birthday : "";
-        $this.gender = (typeof e != "undefined" && e.hasOwnProperty('gender')) ? e.gender : "";
-        $this.lastContact = (typeof e != "undefined" && e.hasOwnProperty('lastContact')) ? e.lastContact : "";
-        $this.customerLifetimeValue = (typeof e != "undefined" && e.hasOwnProperty('customerLifetimeValue')) ? e.customerLifetimeValue : 0;
+
     }
 
     getCustomerID(){
         return this.customerID;
     }
 
-    setCustomerID(id){
+    setCustomerID(id:number){
         this.customerID = id;
     }
 
     getFirstName(){
         return this.name.first;
     }
-    setFirstName(firstname){
+    setFirstName(firstname:string){
         this.name.first = firstname;
     }
     getLastName(){
         return this.name.last;
     }
-    setLastName(lastname){
+    setLastName(lastname:string){
         this.name.last = lastname;
     }
     getName(){
@@ -53,14 +68,14 @@ class Customer{
     getGender(){
         return this.gender;
     }
-    setGender(gender){
+    setGender(gender:string){
         this.gender = gender;
     }
 
     getLastContact(){
         return this.lastContact;
     }
-    setLastContact(lastContact){
+    setLastContact(lastContact:string){
         this.lastContact = lastContact;
     }
 
@@ -68,9 +83,9 @@ class Customer{
         return this.customerLifetimeValue;
     }
 
-    setCustomerLifetimeValue(customerLifetimeValue){
+    setCustomerLifetimeValue(customerLifetimeValue:number){
         this.customerLifetimeValue = customerLifetimeValue;
     }
 
 }
-export default Customer;
+export {Customer, CustomerEntity};

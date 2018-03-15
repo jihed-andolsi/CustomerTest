@@ -2,9 +2,9 @@
  * service customer to fetch some api, here we have localy stored data
  */
 
-import Customer from './Customer';
+import {CustomerEntity} from './Customer';
 class CustomerService{
-    private data;
+    private data  = [];
     constructor(){
         // data json
         this.setData([
@@ -67,9 +67,8 @@ class CustomerService{
     }
 
     setData(data){
-        this.data = [];
         data.map(e=>{
-            this.data.push(new Customer(e));
+            this.data.push(new CustomerEntity(e));
         })
     }
     // get full list of customers, here if we have an API we should use pagination
@@ -96,7 +95,7 @@ class CustomerService{
         this.data.filter((customer, k) =>{
             if(customer.getCustomerID() == customerID){
                 this.data[k] = newCustomerValue;
-                return new Customer(customer);
+                return new CustomerEntity(customer);
             }
         });
 
