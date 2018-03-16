@@ -2,9 +2,9 @@
  * Main controller of application
  */
 class MainController {
-    constructor() {
+	constructor() {
 
-    }
+	}
 }
 
 export default MainController;

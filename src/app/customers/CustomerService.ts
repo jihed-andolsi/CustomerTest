@@ -2,7 +2,7 @@
  * service customer to fetch some api, here we have localy stored data
  */
 
-import {CustomerEntity} from './Customer';
+import {Customer, CustomerEntity} from './Customer';
 class CustomerService{
     private data  = [];
     constructor(){
@@ -67,6 +67,7 @@ class CustomerService{
     }
 
     setData(data){
+        this.data = [];
         data.map(e=>{
             this.data.push(new CustomerEntity(e));
         })
@@ -104,7 +105,7 @@ class CustomerService{
 
 
     // add customer to the list
-    add(newCustomerValue){
+    add(newCustomerValue:Customer){
         let list = this.getList();
         let counter = Math.max(...list.map(e=>{return e.getCustomerID()})) + 1; // get new id to setup new customer
         newCustomerValue.setCustomerID(counter);

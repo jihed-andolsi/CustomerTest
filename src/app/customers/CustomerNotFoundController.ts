@@ -2,8 +2,8 @@
  * shows not found if customer not found
  */
 class CustomerNotFoundController {
-    constructor() {
+	constructor() {
 
-    }
+	}
 }
 export default CustomerNotFoundController;

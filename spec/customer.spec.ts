@@ -1,5 +1,5 @@
 import CustomerService from "./../src/app/customers/CustomerService.ts";
-import Customer from "./../src/app/customers/Customer.ts";
+import {CustomerEntity} from "./../src/app/customers/Customer.ts";
 let assert = require("assert");
 describe("Customer service", () => {
     let service;
@@ -23,7 +23,7 @@ describe("Customer service", () => {
 
     describe("add customer", () => {
         it("should add customer", () => {
-            service.add(new Customer({
+            service.add(new CustomerEntity({
                 "name": {
                     "first": "Peter 2",
                     "last": "Smith 2"
@@ -33,7 +33,7 @@ describe("Customer service", () => {
                 "lastContact": "2017-06-01T23:28:56.782Z",
                 "customerLifetimeValue": 191.12
             }))
-            let expected = [
+            const expected = [
                 {
                     "customerID": 1,
                     "name": {
@@ -63,8 +63,8 @@ describe("Customer service", () => {
 
     describe("edit customer", () => {
         it("should edit customer", () => {
-            let idToEdit = 1;
-            let expected = new Customer({
+            const idToEdit = 1;
+            const expected = new CustomerEntity({
                 "customerID": idToEdit,
                 "name": {
                     "first": "Peter 3",
@@ -75,9 +75,9 @@ describe("Customer service", () => {
                 "lastContact": "2017-06-01T23:28:56.782Z",
                 "customerLifetimeValue": 191.12
             })
-            let edit = service.edit(idToEdit, expected);
+            const edit = service.edit(idToEdit, expected);
             assert.equal(edit, true);
-            let result = service.getById(idToEdit);
+            const result = service.getById(idToEdit);
             assert.equal(JSON.stringify(result), JSON.stringify(expected));
         });
     });
@@ -86,10 +86,10 @@ describe("Customer service", () => {
 
     describe("delete customer", () => {
         it("should delete customer", () => {
-            let idToDelete = 1;
-            let del = service.del(idToDelete);
+            const idToDelete = 1;
+            const del = service.del(idToDelete);
             assert.equal(del, true);
-            let result = service.getById(idToDelete);
+            const result = service.getById(idToDelete);
             assert.equal(result, undefined);
         });
     });
