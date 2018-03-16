@@ -1,16 +1,15 @@
 type Customer = {
-    "customerID": 0,
-    "name": {
-        "first": "",
-        "last": ""
+    customerID: 0,
+    name: {
+        first: "",
+        last: "",
     },
-    "birthday": "",
-    "gender": "",
-    "lastContact": "",
-    "customerLifetimeValue": 0
-}
-
-class CustomerEntity{
+    birthday: "",
+    gender: "",
+    lastContact: "",
+    customerLifetimeValue: 0,
+};
+class CustomerEntity {
     private customerID;
     private name;
     private birthday;
@@ -18,72 +17,73 @@ class CustomerEntity{
     private lastContact;
     private customerLifetimeValue;
 
-    constructor(e: Customer | null){
-        let $this = this;
-        if(e){
-            $this.customerID = (typeof e != "undefined"  && e.hasOwnProperty('customerID')) ?  e.customerID : 0;
+    constructor(e: Customer | null) {
+        const $this = this;
+        if (e) {
+            $this.customerID = (typeof e !== "undefined"  && e.hasOwnProperty("customerID")) ?  e.customerID : 0;
             $this.name = {
-                "first": (typeof e != "undefined"  && e.hasOwnProperty('name')) ? e.name.first : "",
-                "last": (typeof e != "undefined" && e.hasOwnProperty('name')) ? e.name.last : "",
-            }
-            $this.birthday = (typeof e != "undefined" && e.hasOwnProperty('birthday')) ? e.birthday : "";
-            $this.gender = (typeof e != "undefined" && e.hasOwnProperty('gender')) ? e.gender : "";
-            $this.lastContact = (typeof e != "undefined" && e.hasOwnProperty('lastContact')) ? e.lastContact : "";
-            $this.customerLifetimeValue = (typeof e != "undefined" && e.hasOwnProperty('customerLifetimeValue')) ? e.customerLifetimeValue : 0;
+                first: (typeof e !== "undefined"  && e.hasOwnProperty("name")) ? e.name.first : "",
+                last: (typeof e !== "undefined" && e.hasOwnProperty("name")) ? e.name.last : "",
+            };
+            $this.birthday = (typeof e !== "undefined" && e.hasOwnProperty("birthday")) ? e.birthday : "";
+            $this.gender = (typeof e !== "undefined" && e.hasOwnProperty("gender")) ? e.gender : "";
+            $this.lastContact = (typeof e !== "undefined" && e.hasOwnProperty("lastContact")) ? e.lastContact : "";
+            $this.customerLifetimeValue = (typeof e !== "undefined" && e.hasOwnProperty("customerLifetimeValue")) ?
+                e.customerLifetimeValue : 0;
         }
 
     }
 
-    getCustomerID(){
+    public getCustomerID() {
         return this.customerID;
     }
 
-    setCustomerID(id:number){
+    public setCustomerID(id: number) {
         this.customerID = id;
     }
 
-    getFirstName(){
+    public getFirstName() {
         return this.name.first;
     }
-    setFirstName(firstname:string){
+    public setFirstName(firstname: string) {
         this.name.first = firstname;
     }
-    getLastName(){
+    public getLastName() {
         return this.name.last;
     }
-    setLastName(lastname:string){
+    public setLastName(lastname: string) {
         this.name.last = lastname;
     }
-    getName(){
+    public getName() {
         return `${this.getFirstName()} ${this.getLastName()}`;
     }
 
-    getBirthday(){
+    public getBirthday() {
         return this.birthday;
     }
-    setBirthday(birthday){
+    public setBirthday(birthday) {
         this.birthday = birthday;
     }
 
-    getGender(){
+    public getGender() {
         return this.gender;
     }
-    setGender(gender:string){
+    public setGender(gender: string) {
         this.gender = gender;
     }
 
-    getLastContact(){
+    public getLastContact() {
         return this.lastContact;
     }
-    setLastContact(lastContact:string){
+    public setLastContact(lastContact: string) {
         this.lastContact = lastContact;
     }
 
-    getCustomerLifetimeValue(){
+    public getCustomerLifetimeValue() {
         return this.customerLifetimeValue;
     }
 
-    setCustomerLifetimeValue(customerLifetimeValue:number){
+    public setCustomerLifetimeValue(customerLifetimeValue: number) {
         this.customerLifetimeValue = customerLifetimeValue;
     }
 

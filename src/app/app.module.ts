@@ -1,18 +1,12 @@
 /**
  * Load angular app
  */
-import * as angular from "angular";
-import uiRouter from "angular-ui-router";
-
-import MainService from "./main/mainService";
-import CustomerService from "./customers/customerService";
+import * as Angular from "angular";
+import UiRouter from "angular-ui-router";
+import MainService from "./main/MainService";
+import CustomerService from "./customers/CustomerService";
 import Config from "./app.routes";
-
-
-const MODULE_NAME = "app";
-let App = angular.module(MODULE_NAME, [uiRouter])
-	.config(Config)
-	.service("mainService", MainService)
-	.service("customerService", CustomerService);
-
-export default MODULE_NAME;
+export default Angular.module("app", [UiRouter])
+.config(Config)
+.service("mainService", MainService)
+.service("CustomerService", CustomerService);

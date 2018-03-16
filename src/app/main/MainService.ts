@@ -1,4 +1,1 @@
-class MainService{
-
-}
-export default MainService;
+export default class MainService { }
