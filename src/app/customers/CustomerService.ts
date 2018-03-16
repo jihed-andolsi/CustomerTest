@@ -79,7 +79,7 @@ class CustomerService {
     public getById(id) {
         const list = this.getList();
         const [custo] = list.filter((customer) => {
-            if (customer.getCustomerID() === id) {
+            if (customer.getCustomerID() == id) {
                 return customer;
             }
         });
